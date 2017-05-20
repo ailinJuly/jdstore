@@ -27,9 +27,8 @@ class CartItemsController < ApplicationController
 
 
 
-    elsif cart_item_params[:quantity].to_i < 0
-      redirect_to carts_path
-       flash[:warning] = "数量不足以加入购物车"
+    else
+         flash[:warning] = "数量不足以加入购物车"
     end
     redirect_to carts_path
 
