@@ -18,17 +18,21 @@ class CartItemsController < ApplicationController
        if params[:add]== "1"
          @cart_item.quantity += 1
          @cart_item.save!
+             flash[:notice] = "成功变更数量"
        elsif params[:sub]=="1"
          @cart_item.quantity -= 1
          @cart_item.save!
+             flash[:notice] = "成功变更数量"
       end
 
 
 
     elsif cart_item_params[:quantity].to_i < 0
       redirect_to carts_path
+       flash[:warning] = "数量不足以加入购物车"
     end
     redirect_to carts_path
+
   end
 
 private
