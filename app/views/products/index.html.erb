@@ -1,14 +1,58 @@
-<div class="row">
-    <% @products.each do |product| %>
-        <div class="col-xs-6 col-md-3">
-            <%= link_to product_path(product) do %>
-                <% if product.image.present? %>
-                    <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                <% end %>
-            <% end %>
-            <%= product.title %> ￥ <%= product.price %>
-        </div>
-    <% end %>
+<!--客厅大图-->
+<div class="carousel">  <%= image_tag'https://ws3.sinaimg.cn/large/006tNbRwgy1ffusztifzlj31hc0r4ai7.jpg', class: 'img-responsive' %></div>
+<!--风格菜单-->
+<div class="menuList">
+    <div class="btn btn-default manner">简约</div>
+    <div class="btn btn-default manner">北欧</div>
+    <div class="btn btn-primary manner">美式</div>
+    <div class="btn btn-primary manner">日式</div>
+    <div class="btn btn-primary manner">经典</div>
 </div>
+<!--商品列表-->
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Website CSS style -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&subset=latin-ext,vietnamese" rel="stylesheet">
+        <!-- Website Font style -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel="stylesheet" href="product.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese" rel="stylesheet">
+        <title>Product Shop Responsive </title>
+    </head>
+    <body>
+        <div class="container">
+            <h4>NEW COLLECTION</h4>
+            <div class="row">
+                <!-- BEGIN PRODUCTS -->
+                <% @products.each do |product| %>
+                    <div class="col-md-3 col-sm-6">
+                        <span class="thumbnail">
+                            <%= link_to product_path(product) do %>
+                                <% if product.image.present? %>
+                                    <%= image_tag(product.image.thumb.url) %>
+                                <% else %>
+                                    <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                <% end %>
+                            <% end %>
+                            <h4><%= product.title %></h4>
+                            <div class="ratings">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                            </div>
+                            <p><%= product.description %></p>
+                            <hr class="line">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <p class="price">￥<%= product.price %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </body>
+            </html>

@@ -1,27 +1,55 @@
-<div class="row">
-    <div class="col-md-6">
-        <% if @product.image.present? %>
-            <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
-        <% else %>
-            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-        <% end %>
-    </div>
-    <div class="col-md-6">
-        <h2><%= @product.title %></h2>
-        <div class="fix-h">
-            <p><%=@product.description %></p>
-        </div>
-        <div>  数量：
-            <%= @product.quantity %></div>
-        <div class="product-price">
-            ￥  <%= @product.price %>
-        </div>
-        <div class="pull-right">
-            <% if @product.quantity.present? && @product.quantity > 0 %>
-                <%= link_to("加入购物车",add_to_cart_product_path(@product),:method=> :post,:class => "btn btn-primary btn-lg btn-danger") %>
-            <% else %>
-                对不起，此商品已经下架！
-            <% end %>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1">
+                            <% if @product.image.present? %>
+                                <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
+                            <% else %>
+                                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                            <% end %>
+                        </div>
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs">
+                        <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="https://ws1.sinaimg.cn/large/006tNbRwly1ffutwldjyqj30fo0nhmyw.jpg" /></a></li>
+                        <li><a data-target="#pic-2" data-toggle="tab"><img src="https://ws2.sinaimg.cn/large/006tNbRwly1ffutxi5heij30f00mhjtb.jpg" /></a></li>
+                    </ul>
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title"><%= @product.title %></h3>
+                    <div class="rating">
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <span class="review-no">41 reviews</span>
+                    </div>
+                    <p class="product-description"><%=@product.description %></p>
+                    <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>
+                    <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                    <div class="action">
+                        <button class="add-to-cart btn btn-default" type="button">
+                            <% if @product.quantity.present? && @product.quantity > 0 %>
+                                <%= link_to("add to cart",add_to_cart_product_path(@product),:method=> :post) %>
+                            <% else %>
+                                对不起，此商品已经下架！
+                            <% end %></button>
+                        <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+</body>
+</html>
