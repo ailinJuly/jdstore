@@ -1,121 +1,68 @@
 <div class="row">
     <div class="col-md-12">
         <%= link_to("清空购物车", clean_carts_path,method: :delete ,class:"pull-right",style:"text-decoration:underline;",
-  data:{ confirm:"你确定要清空整个购物车吗？"}) %>
-        <h4 class="card-title">购物车</h4>
+            data:{ confirm:"你确定要清空整个购物车吗？"}) %>
+        <h4 class="card-title">购物车 </h4>
         <div class="cart-content">
-            <form class="edit_cart" id="edit_cart_2061" action="/carts/2061/operations" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
-                <input type="hidden" value="2" id="cart-items-count">
-                <div class="card-content">
-                    <div class="table-responsive">
-                        <table class="table table-shopping">
-                            <thead>
-                                <tr>
-                                    <th width="25%">Product</th>
-                                    <th class="text-right">Price</th>
-                                    <th class="text-right">Qty</th>
-                                    <th class="text-right">Amount</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <a class="img-container" href="/products/10">
-                                            <img class="product-img-thumb" src="https://zuodao.s3-ap-northeast-1.amazonaws.com/uploads/product/image/10/thumb_imperium-wine-bottles.jpg" alt="Thumb imperium wine bottles">
-                                        </a>  </td>
-                                    <td class="td-name">
-                                        <a href="/products/10">红酒品鉴课</a>
-                                        <br>
-                                        <small>资深品酒师教你如何品鉴红酒，以及通过红酒与人社交...</small>
-                                    </td>
-                                    <td class="td-number text-right">
-                                        <small>￥</small>
-                                        99.00
-                                    </td>
-                                    <td class="td-number quantity">
-                                        <input type="text" name="quantities[]" value="1" id="quantity-input-0" class="quantity-input" disabled="">
-                                    </td>
-                                    <td class="td-number">
-                                        <small>￥</small>
-                                        <span id="cart-item-subtotal-0">
-                                            99.00
-                                        </span>
-                                    </td>
-                                    <td class="td-actions text-center">
-                                        <button type="button" rel="tooltip" title="" class="btn btn-simple" data-toggle="modal" data-target="#confirm-dialog" onclick="confirmRemoveCartItem(&quot;116&quot;, &quot;确认将课程 红酒品鉴课 移出购物车吗？&quot;)" data-original-title="Remove item">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                        <button name="delete_item" type="submit" value="116" class="invisible" id="cart-btn-delete-116">删除</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <!-- 结算按钮 -->
-                                    <tr>
-                                        <td colspan="5"></td>
-                                        <td colspan="2" class="text-center">
-                                            <button name="checkout" type="submit" value="true" class="btn-checkout btn btn-raised btn-info btn-round">
-                                                去结算
-                                                <i class="material-icons">keyboard_arrow_right</i>
-                                            </button>          </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th colspan="2">商品资讯</th>
-                        <th>单价</th>
-                        <th>数量</th>
-                        <th>操作选项</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% current_cart.cart_items.each do |cart_item| %>
+            <div class="card-content">
+                <table class="table table-shopping">
+                    <thead>
                         <tr>
-                            <td>
-                                <%= link_to product_path(cart_item.product) do %>
-                                    <% if cart_item.product.image.present? %>
-                                        <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
-                                    <% else %>
-                                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                                    <% end %>
-                                <% end %>
-                            </td>
-                            <td>
-                                <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
-                            </td>
-                            <td>
-                                <%= cart_item.product.price %>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <%= link_to cart_item_path(cart_item.product_id),method: :delete do %>
-                                    <i class="fa fa-trash"></i>
-                                <% end %>
-                            </td>
+                            <th class="text-center"></th>
+                            <th width="25%">Product</th>
+                            <th class="text-right">Price</th>
+                            <th class="text-right">Qty</th>
+                            <th class="text-right">Amount</th>
+                            <th></th>
                         </tr>
-                    <% end %>
-                </tbody>
-            </table>
-            <br>
-            <div class="total clearfix">
-                <span class="pull-right">
-                    <span>
-                        总计 <%= render_cart_total_price(current_cart) %> RMB
-                    </span>
-                </span>
-            </div>
-            <hr>
-            <div class="checkout clearfix">
-                <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+                    </thead>
+                    <tbody>
+                        <% current_cart.cart_items.each do |cart_item| %>
+                            <tr>
+                                <td>
+                                    <%= link_to product_path(cart_item.product) do %>
+                                        <% if cart_item.product.image.present? %>
+                                            <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+                                        <% else %>
+                                            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                                        <% end %>
+                                    <% end %>
+                                </td>
+                                <td class="td-name">
+                                    <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+                                    <br>
+                                    <small> <%= cart_item.product.description %></small>
+                                </td>
+                                <td class="td-number text-right">
+                                    <small>￥ <%=cart_item.product.price %></small>
+                                </td>
+                                <td class="td-number quantity">
+                                    <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+                                        <%= f.select :quantity, 1..cart_item.product.quantity %>
+                                        <%= f.submit "Update", data: { disable_with: "Submiting..." } %>
+                                    <% end %>
+                                </td>
+                                <td class="td-actions text-center">
+                                    <%= link_to cart_item_path(cart_item.product_id),method: :delete do %>
+                                        <i class="fa fa-trash"></i>
+                                    <% end %>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                    <hr>
+                        <div class="total clearfix">
+                            <span class="pull-right">
+                                <span>
+                                    TOTAL :<%= render_cart_total_price(current_cart) %> RMB
+                                </span>
+                            </span>
+                        </div>
+                        <hr>
+                        <div class="checkout clearfix">
+                           <%= link_to("Check out", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
