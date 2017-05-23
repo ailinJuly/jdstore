@@ -23,7 +23,7 @@
  }
 
  .bg-color2 {
-   background: #E0E0E0;
+   background: #F5F5F5;
  }
 
  .bg-color3 {
@@ -153,14 +153,14 @@
    margin-left: -15px;
    margin-right: -15px;
    margin-top:-20px;
-   height: 400px;
+   height: 700px;
  }
 
  .body3 {
    margin-left: -15px;
    margin-right: -15px;
    margin-top:-20px;
-   height: 400px;
+   height: 500px;
  }
 
  .body4{
@@ -175,25 +175,66 @@
   margin-top: 100px;
 
 }
+.body2-text{
+  text-align: center;
+  padding-top: 40px;
+}
 
+.body3-text{
+  text-align: center;
+  padding-top: 30px;
+}
 
- /*商品列表*/
+ /*body2商品列表*/
  .productList {
    margin: 20px auto;
    width: 1200px;
-   overflow: hidden;
  }
 
  .productList-item {
    float: left;
    width: 300px;
    height: 250px;
-   margin-top: 80px;
+   margin-top: 40px;
    margin-right: 50px;
    margin-left: 50px;
    margin-bottom: 15px;
  }
 
+
+ .productNote-item {
+   text-align:center;
+   padding-top: 20px;
+
+ }
+
+
+ /*body3媒体报答据报道*/
+ .newList {
+   margin: 20px auto;
+   width: 1200px;
+   height: 400px;
+ }
+
+ .newList-left {
+   float: left; /*你去左边*/
+   width: 50%; /*你占一半的宽度*/
+   height: 200px;
+ }
+
+ .newList-right {
+   float: left; /*你去左边*/
+   width: 50%; /*你占一半的宽度*/
+   height: 200px;
+ }
+
+ .newtList-item {
+   float: left;
+   width: 240px;
+   height: 100px;
+   margin-bottom: 10px;
+   margin-right: 10px;
+ }
 
  /* 页脚 */
  .footer {
