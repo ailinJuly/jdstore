@@ -160,14 +160,14 @@
    margin-left: -15px;
    margin-right: -15px;
    margin-top:-20px;
-   height: 500px;
+   height: 400px;
  }
 
  .body4{
    margin-left: -15px;
    margin-right: -15px;
    margin-top:-20px;
-   height: 400px;
+   height: 200px;
  }
 
 .body-text{
@@ -184,7 +184,11 @@
   text-align: center;
   padding-top: 30px;
 }
-
+.body4-text{
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 80px;
+}
  /*body2商品列表*/
  .productList {
    margin: 20px auto;
@@ -218,12 +222,13 @@
 
  .newList-left {
    float: left; /*你去左边*/
-   width: 50%; /*你占一半的宽度*/
+   width: 580px; /*你占一半的宽度*/
    height: 200px;
+   margin-right: 10px;
  }
 
  .newList-right {
-   float: left; /*你去左边*/
+   float: right; /*你去左边*/
    width: 50%; /*你占一半的宽度*/
    height: 200px;
  }
@@ -231,11 +236,25 @@
  .newtList-item {
    float: left;
    width: 240px;
-   height: 100px;
-   margin-bottom: 10px;
+   height: 400px;
+   margin-top: 20px;
    margin-right: 10px;
+
  }
 
+ .clearfix {
+     overflow: auto;
+ }
+
+ .new-text{
+   margin: 10px;
+   padding-left: 10px;
+ }
+
+ .topic-text {
+   padding-top: 10px;
+   padding-bottom: 20px;
+ }
  /* 页脚 */
  .footer {
    margin-top: 20px;
@@ -244,6 +263,27 @@
  }
 
 
+//body4
+ .action-btn {
+    vertical-align:middle ;
+    line-height:28px;
+    margin:0px;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+    text-align: center;
+    font-size: 1.428em;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    padding: 0.57em 1.9em;
+    margin-top: 2.85em;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 2px;
+    color: white;
+    background: #1ecd97;
+    border: 2px solid #1ecd97;
+   }
 
 
 
