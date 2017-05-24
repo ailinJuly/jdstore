@@ -1,7 +1,10 @@
 <div class="row">
     <div class="col-md-12">
-        <h3 class="detail"> 购物明细 </h3>
-        <table class="table table-bordered col-md-6">
+
+
+        <h2> 购物明细 </h2>
+
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th width="80%">商品明细</th>
@@ -31,43 +34,31 @@
             </span>
         </div>
         <hr>
-        <h3 class="order"> 订单资讯 </h3>
+
+        <h2> 订单资讯 </h2>
+
         <div class="order-form">
             <%= simple_form_for @order do |f| %>
-              <div class="order-form-left">
-                  <legend> 订购人</legend>
-                  <div class="input">
-                      <%= f.input :billing_name  %>
-                  </div>
-                  <div class="input">
-                      <%= f.input :billing_address  %>
-                  </div>
-              </div>
+            <legend> 订购人</legend>
+                         <div class="form-group col-lg-6">
+                                 <%= f.input :billing_name  %>
+                             </div>
+                             <div class="form-group col-lg-6">
+                                 <%= f.input :billing_address  %>
+                             </div>
+                             <legend> 收货人</legend>
+                             <div class="form-group col-lg-6">
 
-              <div class="order-form-right">
-                 <legend> 收货人</legend>
-                  <div class="input">
                     <%= f.input :shipping_name  %>
                   </div>
-                  <div class="input">
+                  <div class="form-group col-lg-6">
                     <%= f.input :shipping_address  %>
-                  </div>
-              </div>
-
-
-              <!-- <div class="checkout">
-                  <%= f.submit "生成订单", class: "btn btn-lg pull-right",
-                     data: { disable_with: "Submitting..." } %>
-
-              </div> -->
-              <td colspan="2" class="text-center">
-                  <button name="checkout" type="submit" value="true" class="btn-checkout btn btn-raised btn-info btn-round">
-                        生成订单
-                            <div class="ripple-container"></div>
-                  </button>
-            </td>
-                <% end %>
-          </div>
-
+                                     </div>
+                     <div class="checkout">
+                         <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
+                            data: { disable_with: "Submitting..." } %>
+                     </div>
+                 <% end %>
+           </div>
         </div>
     </div>
