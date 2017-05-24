@@ -1,472 +1,1019 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+// /*
+//  * This is a manifest file that'll be compiled into application.css, which will include all the files
+//  * listed below.
+//  *
+//  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+//  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+//  *
+//  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+//  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+//  * files in this directory. Styles in this file should be added after the last require_* statement.
+//  * It is generally better to create a new file per style scope.
+//  *
+//  *= require_tree .
+//  *= require_self
+//  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
 
+ /*5种背景颜色*/
+ .bg-color1 {
+   background: #FFF;
+ }
+
+ .bg-color2 {
+   background: #F5F5F5;
+ }
+
+ .bg-color3 {
+   background: #FFE066;
+ }
+
+ .bg-color4 {
+   background: #247BA0;
+ }
+
+ .bg-color5 {
+   background: #70C1B3;
+ }
 
 
- /*导航栏*/
+
+ /*navbar导航栏*/
+ .navbar-wrap {
+  //  width: 100%; /*铺满屏幕*/
+   margin-left: -15px;
+   margin-right: -15px;
+   background: #F5F5F5; /*背景颜色*/
+   font-size: 20px; /*字体12px*/
+   height: 80px; /*设置高度*/
+   line-height: 30px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+   color: #717171; /*字体颜色*/
+ }
+
  .navbar {
-   width: 100%; /*铺满*/
+   width: 100%; /*设置导航栏宽度1200*/
+   padding: 15px;
+   margin: 0 auto; /*水平居中*/
  }
- .navbarContent {
-   width: 1200px; /*1200px，居中*/
-   margin: 0 auto;
-   height: 30px;
- }
- .navbarContent-left {
+
+ .navbar-left {
    float: left; /*你去左边*/
-   width: 100%; /*你占一半的宽度*/
-   height: 30px;
+   list-style-type: none;
+ }
+
+ .navbar-list {
+   float: right; /*你去右边*/
+   list-style-type: none;
  }
 
 
- /*客厅大图*/
+ .navbar-listItem-right {
+   float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+   padding-left: 1px; /*左边加点空间，不然太挤啦*/
+   padding-right: 10px; /*右边加点空间，不然太挤啦*/
+ }
 
+ .navbar-spacer-right {
+   float: left; /*同样的，你也要float*/
+   width: 1px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
+   height: 12px; /*12px差不多，刚刚好*/
+   margin-top: 9px; /*调一下上边距*/
+   margin-right: 10px;
+   background: #ddd; /*分隔符的背景颜色*/
+ }
+
+ .navbar-spacer-left {
+   float: left; /*同样的，你也要float*/
+   width: 100px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
+   height: 12px; /*12px差不多，刚刚好*/
+   margin-top: 9px; /*调一下上边距*/
+   background: #F5F5F5; /*分隔符的背景颜色*/
+ }
+ .navbar-wrap a {
+   color: #717171; /*文字的颜色*/
+   text-decoration: none; /*不要下划线啦，好丑*/
+ }
+
+ .navbar-wrap a:hover {
+   color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+ }
+
+
+
+/*购物车*/
+
+.cart-wrap {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  margin-top: -5px; /*上边距*/
+  margin-left: 600px; /*左边距*/
+}
+
+.cart {
+  padding: 4px 10px; /*加内边距*/
+  cursor: pointer; /*鼠标一上去，显示手型*/
+  border: 1px solid #DFDFDF; /*1像素，实线，灰色*/
+  background: #F5F5F5; /*灰色背景*/
+  font-size: 12px; /*字体小一点好看*/
+}
+
+.fa-shopping-cart {
+  color: #C81623; /*红色图标*/
+  font-size: 16px; /*图标大一点好看*/
+  margin-right: 10px; /*右边距*/
+}
+
+.cart a {
+  color: #6D6D6D; /*灰色字体*/
+  text-decoration: none; /*不要下划线*/
+}
+
+.cart a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+}
+
+ /*轮播图*/
  .carousel {
-   margin: 20px auto;
-   width: 900px;
-   height: 400px;
-   z-index: -1;
+   margin-left: -15px;
+   margin-right: -15px;
+   margin-top: -20px;
+   height: 550px;
  }
 
- /*菜单*/
- .menu {
-   width: 100%;
+//body
+ .body1 {
+   margin-left: -15px;
+   margin-right: -15px;
+   margin-top: -20px;
+   height: 300px;
  }
 
- .menuList {
-   width: 1200px;
-   margin: 20px auto;
-   height: 42px;
+ .body2 {
+   margin-left: -15px;
+   margin-right: -15px;
+   margin-top:-20px;
+   height: 700px;
  }
 
- .menuList-item {
-   float: left;
-   width: 108px;
-   height: 42px;
-   margin-left: 15px;
-
+ .body3 {
+   margin-left: -15px;
+   margin-right: -15px;
+   margin-top:-20px;
+   height: 600px;
  }
 
- .manner{
-   font-family: 'Quicksand', sans-serif;
-   	font-size: 20px;
-
+ .body4{
+   margin-left: -15px;
+   margin-right: -15px;
+   margin-top:-20px;
+   height: 200px;
  }
 
- /*商品列表*/
- @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
-body{font-family: 'Quicksand', sans-serif;}
-   h4{
-    	font-weight: 600;
-	}
-	p{
-		font-size: 12px;
-		margin-top: 5px;
-	}
-	.price{
-		font-size: 30px;
-    	margin: 0 auto;
-    	color: #333;
-	}
+.body-text{
+  text-align: center;
+  margin-top: 40px;
 
-	.thumbnail{
-		opacity:0.70;
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-	}
-	.thumbnail:hover{
-		opacity:1.00;
-		box-shadow: 0px 0px 10px #4bc6ff;
-	}
-	.line{
-		margin-bottom: 5px;
-	}
-	@media screen and (max-width: 770px) {
-		.right{
-			float:left;
-			width: 100%;
-		}
-	}
-	span.thumbnail {
-        border: 1px solid #00c4ff !important;
-    border-radius: 0px !important;
-    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-	padding: 10px;
 }
-.container h4{margin-top:70px; margin-bottom:30px;}
-button {    margin-top: 6px;
+.body2-text{
+  text-align: center;
+  padding-top: 40px;
 }
-.right {
-    float: right;
-    border-bottom: 2px solid #0a5971;
+
+.body3-text{
+  text-align: center;
+  padding-top: 30px;
 }
-.btn-info {
-    color: #fff;
-    background-color: #19b4e2;
-    border-color: #19b4e2;
-	font-size:13px;
-	font-weight:600;
+.body4-text{
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 80px;
 }
- /*导航栏*/
- .navbar {
-   width: 100%; /*铺满*/
- }
- .navbarContent {
-   width: 1200px; /*1200px，居中*/
-   margin: 0 auto;
-   height: 30px;
- }
- .navbarContent-left {
-   float: left; /*你去左边*/
-   width: 100%; /*你占一半的宽度*/
-   height: 30px;
- }
-
-
- /*客厅大图*/
-
- .carousel {
-   margin: 20px auto;
-   width: 1200px;
-   height: 400px;
- }
-
- /*菜单*/
- .menu {
-   width: 100%;
- }
-
- .menuList {
-   width: 1200px;
-   margin: 20px auto;
-   height: 42px;
- }
-
- .menuList-item {
-   float: left;
-   width: 108px;
-   height: 42px;
-   margin-left: 15px;
-
- }
-
- /*商品列表*/
+ /*body2商品列表*/
  .productList {
    margin: 20px auto;
    width: 1200px;
-   overflow: hidden;
  }
 
  .productList-item {
    float: left;
-   width: 30%;
+   width: 300px;
    height: 250px;
-   margin-right: 15px;
+   margin-top: 40px;
+   margin-right: 50px;
+   margin-left: 50px;
    margin-bottom: 15px;
  }
 
- .productList-lastItem {
-   margin-right: 0;
+
+ .productNote-item {
+   text-align:center;
+   padding-top: 20px;
+
+ }
+
+
+ /*body3媒体报答据报道*/
+ .newList {
+   margin-top: 20px;
+   margin-left: 30px;
+   margin-bottom: 0px;
+   width: 1200px;
+   height: 100px;
+
+ }
+
+ .newList-left {
+   float: left; /*你去左边*/
+   width: 580px; /*你占一半的宽度*/
+   height: 200px;
+   margin-right: 10px;
+ }
+
+ .newList-right {
+   float: right; /*你去左边*/
+   width: 50%; /*你占一半的宽度*/
+   height: 200px;
+ }
+
+ .newtList-item {
+   float: left;
+   width: 240px;
+   height: 400px;
+   margin-top: 20px;
+   margin-right: 10px;
+
+ }
+
+ .clearfix {
+     overflow: auto;
+ }
+
+ .new-text{
+   margin: 10px;
+   padding-left: 10px;
+ }
+
+ .topic-text {
+   padding-top: 10px;
+   padding-bottom: 20px;
  }
  /* 页脚 */
  .footer {
    margin-top: 20px;
    width: 100%;
-   height: 155px;
+   height: 83px;
  }
 
 
+//body4
+ .action-btn {
+    vertical-align:middle ;
+    line-height:28px;
+    margin:0px;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+    text-align: center;
+    font-size: 1.428em;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    padding: 0.57em 1.9em;
+    margin-top: 2.85em;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 2px;
+    color: white;
+    background: #1ecd97;
+    border: 2px solid #1ecd97;
+   }
 
-/*****************商品详情*************/
-body {
-  font-family: 'open sans';
-  overflow-x: hidden; }
+//footer
+#footer-section {
+  padding:40px 0px 40px 0px;
+  background-color:#F5F5F5;
+}
 
-img {
-  max-width: 100%; }
+#footer-copy {
 
-.preview {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-  @media screen and (max-width: 996px) {
-    .preview {
-      margin-bottom: 20px; } }
+}
 
-.preview-pic {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
+#footer-section h3 {
+  color:#333;
+  font-size:16px;
+  font-weight:400;
+  padding:0;
+  margin:0px 0px 15px 0px;
+}
 
-.preview-thumbnail.nav-tabs {
-  border: none;
-  margin-top: 15px; }
-  .preview-thumbnail.nav-tabs li {
-    width: 18%;
-    margin-right: 2.5%; }
-    .preview-thumbnail.nav-tabs li img {
-      max-width: 100%;
-      display: block; }
-    .preview-thumbnail.nav-tabs li a {
-      padding: 0;
-      margin: 0; }
-    .preview-thumbnail.nav-tabs li:last-of-type {
-      margin-right: 0; }
+#footer-section a {
+  color:#666;
+  font-size:14px;
+  line-height:22px;
+  font-weight:300;
+  text-decoration:none;
+  display:block;
+}
 
-.tab-content {
-  overflow: hidden; }
-  .tab-content img {
-    width: 100%;
-    -webkit-animation-name: opacity;
-            animation-name: opacity;
-    -webkit-animation-duration: .3s;
-            animation-duration: .3s; }
+#footer-section a:hover {
+  text-decoration:underline;
+}
 
-.card {
-  margin-top: 50px;
-  background: #eee;
-  padding: 3em;
-  line-height: 1.5em; }
+.footer-group {
+  float:left;
+  margin:0px 50px 0px 0px;
+}
 
-@media screen and (min-width: 997px) {
-  .wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; } }
+#footer-logo {
+  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/bruce-logo-footer-large.png);
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  width:199px;
+  height:46px;
+  margin:0px 60px 50px 0px;
+}
 
-.details {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+#footer-join-our-team {
+  cursor:pointer;
+  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/join-our-team-button-large.png);
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  width:184px;
+  height:41px;
+  margin:0px 0px 10px 0px;
+}
 
-.colors {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
+#footer-join-our-team:hover {
+  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/join-our-team-button-over-large.png);
+}
 
-.product-title,.sizes, .colors {
-  text-transform: UPPERCASE;
-  font-weight: bold; }
+.footer-social-media-link {
+  display:inline-block;
+  cursor:pointer;
+  background-position:center;
+  background-repeat:no-repeat;
+  width:27px;
+  height:26px;
+  margin:4px;
+}
 
-  .price1{
-    text-transform: UPPERCASE;
-    font-weight: bold;
-      padding-up: 20px;
-    padding-bottom: 20px;
+#footer-facebook {
+  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/facebook-white-large.png);
+}
+
+#footer-twitter {
+  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/twitter-white-large.png);
+}
+
+#footer-blogspot {
+  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/blogger-white-large.png);
+}
+
+#footer-contact {
+  color:#424242;
+  font-size:12px;
+  font-weight:300;
+  padding:30px 0px 10px 0px;
+}
+
+#footer-contact div {
+  display:inline;
+}
+
+#footer-contact a {
+  display:inline;
+  color:inherit;
+  font-size:inherit;
+  line-height:inherit;
+}
+
+#footer-copyright {
+  color:#666;
+  font-size:11px;
+  font-weight:300;
+}
+
+.footer-divider {
+  margin:0px 4px 0px 4px;
+}
+
+@media screen and (min-width:600px) and (max-width: 999px) {
+  #footer-section h3 {
+    font-size:16px;
+    font-weight:400;
+    margin:0px 0px 15px 0px;
   }
 
-.checked, .price span {
-  color: #ff9f1a; }
+  #footer-section a {
+    font-size:13px;
+    font-weight:300;
+    line-height:22px;
+  }
 
-.product-title, .rating, .product-description, .price, .vote, .sizes {
-  margin-bottom: 15px; }
+  .footer-group {
+    margin:0px 20px 0px 0px;
+    color: #424242;
+  }
 
-.product-title {
-  margin-top: 0; }
+  #footer-logo {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/bruce-logo-footer-medium.png);
+    width:121px;
+    height:28px;
+    margin:4px 0px 37px 0px;
+  }
 
-.size {
-  margin-right: 10px; }
-  .size:first-of-type {
-    margin-left: 40px; }
+  #footer-join-our-team {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/join-our-team-button-medium.png);
+    width:120px;
+    height:27px;
+    margin:0px 0px 10px 0px;
+  }
 
-.color {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  height: 2em;
-  width: 2em;
-  border-radius: 2px; }
-  .color:first-of-type {
-    margin-left: 20px; }
-
-.add-to-cart, .like {
-  background: #ff9f1a;
-  padding: 1.2em 1.5em;
-  border: none;
-  text-transform: UPPERCASE;
-  font-weight: bold;
-  color: #fff;
-  -webkit-transition: background .3s ease;
-          transition: background .3s ease;
-text-decoration: none; /*不要下划线啦，好丑*/
-         }
-  .add-to-cart:hover, .like:hover {
-    background: #b36800;
-    color: #fff;
-  text-decoration: none; /*不要下划线啦，好丑*/
+  #footer-join-our-team:hover {
+  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/join-our-team-button-over-medium.png);
 }
 
-.not-available {
-  text-align: center;
-  line-height: 2em; }
-  .not-available:before {
-    font-family: fontawesome;
-    content: "\f00d";
-    color: #fff; }
+  .footer-social-media-link {
+    width:16px;
+    height:16px;
+    margin:4px;
+  }
+
+  #footer-facebook {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/facebook-white-medium.png);
+  }
+
+  #footer-twitter {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/twitter-white-medium.png);
+  }
+
+  #footer-blogspot {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/blogger-white-medium.png);
+  }
+
+  #footer-contact {
+    font-size:13px;
+    font-weight:300;
+  }
+
+  #footer-contact div {
+    /* So that the address and phone numbers are on separate lines */
+    display:block;
+  }
 
 
+  #footer-contact a {
+    display:inline;
+    color:inherit;
+    font-size:inherit;
+    line-height:inherit;
+  }
 
-.tooltip-inner {
-  padding: 1.3em; }
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-/*# sourceMappingURL=style.css.map */
-
-/*add-to-cart*/
-
-.table-shopping>thead>tr>th {
-    font-size: 0.9em;
-    text-transform: uppercase
+  #footer-contact div:nth-last-child(2) {
+    /* So that there is no divider between the address and phone number lines */
+    display:none;
+  }
 }
 
-.table-shopping>tbody>tr>td {
-    font-size: 16px
-}
+@media screen and (max-width: 599px) {
+  #footer-section {
+    padding:25px 0px 25px 0px;
+  }
 
-.table-shopping>tbody>tr>td b {
-    display: block;
-    margin-bottom: 5px
-}
+  #footer-section h3 {
+    font-size:20px;
+    font-weight:400;
+    margin:4px 0px 10px 0px;
+  }
 
-.table-shopping .td-name {
-    font-weight: 400;
-    font-size: 1.5em
-}
+  #footer-section a {
+    font-size:17px;
+    font-weight:300;
+    line-height:28px;
+  }
 
-.table-shopping .td-name small {
-    color: #999999;
-    font-size: 0.75em;
-    font-weight: 300
-}
+  .footer-group {
+    width:300px;
+    margin:0px 20px 20px 0px;
+  }
 
-.table-shopping .td-number {
-    font-weight: 300;
-    font-size: 1.3em
-}
+  .footer-group > * {
+    vertical-align:top;
+  }
 
-.table-shopping .td-name {
-    min-width: 200px
-}
-
-.table-shopping .td-name a {
-    color: #3C4858
-}
-
-.table-shopping .td-name a:hover,.table-shopping .td-name a:focus {
-    color: #9c27b0
-}
-
-.table-shopping .td-number {
-    text-align: right;
-    min-width: 145px
-}
-
-.table-shopping .td-number small {
-    margin-right: 3px
-}
-
-.table-shopping .img-container {
-    width: 120px;
-    max-height: 160px;
-    overflow: hidden;
-    display: block
-}
-
-.table-shopping .img-container img {
-    width: 100%
-}
-.table .td-total {
-    font-weight: 500;
-    font-size: 1.25em;
-    padding-top: 14px;
-    text-align: right
-}
-.table .td-price {
-    font-size: 26px;
-    font-weight: 300;
-    margin-top: 5px;
-    text-align: right
-}
-.btn.btn-round,.navbar .navbar-nav>li>a.btn.btn-round {
-    border-radius: 30px
+  .footer-group-logo {
+    margin:0px 0px 20px 0px
+  }
 
 
+  #footer-logo {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/bruce-logo-footer-medium.png);
+    width:120px;
+    height:27px;
+    margin:0px 10px 20px 0px;
+  }
+
+  #footer-join-our-team {
+    display:inline-block;
+    margin:0px 10px 10px 0px;
+  }
+
+  .footer-social-media-link {
+    margin:8px 4px 0px 0px;
+  }
+
+  #footer-contact {
+    font-size:14px;
+    line-height:24px;
+    padding:10px 0px 10px 0px;
+  }
+
+  #footer-contact span.nw {
+    display:block;
+  }
+
+  .footer-contact-company-name {
+    font-weight:400;
+  }
+
+  .footer-divider {
+    display:none;
+  }
+
+  #footer-contact a {
+    display:inline;
+    color:#424242;
+    font-size:inherit;
+    line-height:inherit;
+  }
 }
-.total,.checkout{
-  font-family: 'Quicksand', sans-serif;
-  font-size: 24px;
+
+/* Retina graphics here */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width:1000px) {
+  #footer-logo {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/bruce-logo-footer-large@2x.png);
+  }
+
+  #footer-join-our-team {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/join-our-team-button-large@2x.png);
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width:600px) and (max-width: 999px) {
+  #footer-logo {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/bruce-logo-footer-medium@2x.png);
+  }
+
+  #footer-join-our-team {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/join-our-team-button-medium@2x.png);
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 599px) {
+  #footer-logo {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/bruce-logo-footer-medium@2x.png);
+  }
+
+  #footer-join-our-team {
+    background-image:url(http://www.braksoftware.com/codepen/bruce/v1/join-our-team-button-large@2x.png);
+  }
 }
 
 
-/*order*/
-.detail{
-  margin-left: 480px;
 
-}
 
-.order{
-  margin-left:480px;
 
-}
-.order-form{
-  width:1000px;
-  height: 500px;
-  margin: 0 auto;
-  margin-top: 30px;
-  border: 1px solid #999999;
-  border-radius: 20px;
-  padding:30px 12px ;
-  background-color: #E0E0E0;
-}
+
+//
+//
+//  /*导航栏*/
+//  .navbar {
+//    width: 100%; /*铺满*/
+//  }
+//  .navbarContent {
+//    width: 1200px; /*1200px，居中*/
+//    margin: 0 auto;
+//    height: 30px;
+//  }
+//  .navbarContent-left {
+//    float: left; /*你去左边*/
+//    width: 100%; /*你占一半的宽度*/
+//    height: 30px;
+//  }
+//
+//
+//  /*客厅大图*/
+//
+//  .carousel {
+//    margin: 20px auto;
+//    width: 900px;
+//    height: 400px;
+//    z-index: -1;
+//  }
+//
+//  /*菜单*/
+//  .menu {
+//    width: 100%;
+//  }
+//
+//  .menuList {
+//    width: 1200px;
+//    margin: 20px auto;
+//    height: 42px;
+//  }
+//
+//  .menuList-item {
+//    float: left;
+//    width: 108px;
+//    height: 42px;
+//    margin-left: 15px;
+//
+//  }
+//
+//  .manner{
+//    font-family: 'Quicksand', sans-serif;
+//    	font-size: 20px;
+//
+//  }
+//
+//  /*商品列表*/
+//  @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
+// body{font-family: 'Quicksand', sans-serif;}
+//    h4{
+//     	font-weight: 600;
+// 	}
+// 	p{
+// 		font-size: 12px;
+// 		margin-top: 5px;
+// 	}
+// 	.price{
+// 		font-size: 30px;
+//     	margin: 0 auto;
+//     	color: #333;
+// 	}
+//
+// 	.thumbnail{
+// 		opacity:0.70;
+// 		-webkit-transition: all 0.5s;
+// 		transition: all 0.5s;
+// 	}
+// 	.thumbnail:hover{
+// 		opacity:1.00;
+// 		box-shadow: 0px 0px 10px #4bc6ff;
+// 	}
+// 	.line{
+// 		margin-bottom: 5px;
+// 	}
+// 	@media screen and (max-width: 770px) {
+// 		.right{
+// 			float:left;
+// 			width: 100%;
+// 		}
+// 	}
+// 	span.thumbnail {
+//         border: 1px solid #00c4ff !important;
+//     border-radius: 0px !important;
+//     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+//     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+//     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+// 	padding: 10px;
+// }
+// .container h4{margin-top:70px; margin-bottom:30px;}
+// button {    margin-top: 6px;
+// }
+// .right {
+//     float: right;
+//     border-bottom: 2px solid #0a5971;
+// }
+// .btn-info {
+//     color: #fff;
+//     background-color: #19b4e2;
+//     border-color: #19b4e2;
+// 	font-size:13px;
+// 	font-weight:600;
+// }
+//  /*导航栏*/
+//  .navbar {
+//    width: 100%; /*铺满*/
+//  }
+//  .navbarContent {
+//    width: 1200px; /*1200px，居中*/
+//    margin: 0 auto;
+//    height: 30px;
+//  }
+//  .navbarContent-left {
+//    float: left; /*你去左边*/
+//    width: 100%; /*你占一半的宽度*/
+//    height: 30px;
+//  }
+//
+//
+//  /*客厅大图*/
+//
+//  .carousel {
+//    margin: 20px auto;
+//    width: 1200px;
+//    height: 400px;
+//  }
+//
+//  /*菜单*/
+//  .menu {
+//    width: 100%;
+//  }
+//
+//  .menuList {
+//    width: 1200px;
+//    margin: 20px auto;
+//    height: 42px;
+//  }
+//
+//  .menuList-item {
+//    float: left;
+//    width: 108px;
+//    height: 42px;
+//    margin-left: 15px;
+//
+//  }
+//
+//  /*商品列表*/
+//  .productList {
+//    margin: 20px auto;
+//    width: 1200px;
+//    overflow: hidden;
+//  }
+//
+//  .productList-item {
+//    float: left;
+//    width: 30%;
+//    height: 250px;
+//    margin-right: 15px;
+//    margin-bottom: 15px;
+//  }
+//
+//  .productList-lastItem {
+//    margin-right: 0;
+//  }
+//  /* 页脚 */
+//  .footer {
+//    margin-top: 20px;
+//    width: 100%;
+//    height: 155px;
+//  }
+//
+//
+//
+// /*****************商品详情*************/
+// body {
+//   font-family: 'open sans';
+//   overflow-x: hidden; }
+//
+// img {
+//   max-width: 100%; }
+//
+// .preview {
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -webkit-flex-direction: column;
+//       -ms-flex-direction: column;
+//           flex-direction: column; }
+//   @media screen and (max-width: 996px) {
+//     .preview {
+//       margin-bottom: 20px; } }
+//
+// .preview-pic {
+//   -webkit-box-flex: 1;
+//   -webkit-flex-grow: 1;
+//       -ms-flex-positive: 1;
+//           flex-grow: 1; }
+//
+// .preview-thumbnail.nav-tabs {
+//   border: none;
+//   margin-top: 15px; }
+//   .preview-thumbnail.nav-tabs li {
+//     width: 18%;
+//     margin-right: 2.5%; }
+//     .preview-thumbnail.nav-tabs li img {
+//       max-width: 100%;
+//       display: block; }
+//     .preview-thumbnail.nav-tabs li a {
+//       padding: 0;
+//       margin: 0; }
+//     .preview-thumbnail.nav-tabs li:last-of-type {
+//       margin-right: 0; }
+//
+// .tab-content {
+//   overflow: hidden; }
+//   .tab-content img {
+//     width: 100%;
+//     -webkit-animation-name: opacity;
+//             animation-name: opacity;
+//     -webkit-animation-duration: .3s;
+//             animation-duration: .3s; }
+//
+// .card {
+//   margin-top: 50px;
+//   background: #eee;
+//   padding: 3em;
+//   line-height: 1.5em; }
+//
+// @media screen and (min-width: 997px) {
+//   .wrapper {
+//     display: -webkit-box;
+//     display: -webkit-flex;
+//     display: -ms-flexbox;
+//     display: flex; } }
+//
+// .details {
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -webkit-flex-direction: column;
+//       -ms-flex-direction: column;
+//           flex-direction: column; }
+//
+// .colors {
+//   -webkit-box-flex: 1;
+//   -webkit-flex-grow: 1;
+//       -ms-flex-positive: 1;
+//           flex-grow: 1; }
+//
+// .product-title,.sizes, .colors {
+//   text-transform: UPPERCASE;
+//   font-weight: bold; }
+//
+//   .price1{
+//     text-transform: UPPERCASE;
+//     font-weight: bold;
+//       padding-up: 20px;
+//     padding-bottom: 20px;
+//   }
+//
+// .checked, .price span {
+//   color: #ff9f1a; }
+//
+// .product-title, .rating, .product-description, .price, .vote, .sizes {
+//   margin-bottom: 15px; }
+//
+// .product-title {
+//   margin-top: 0; }
+//
+// .size {
+//   margin-right: 10px; }
+//   .size:first-of-type {
+//     margin-left: 40px; }
+//
+// .color {
+//   display: inline-block;
+//   vertical-align: middle;
+//   margin-right: 10px;
+//   height: 2em;
+//   width: 2em;
+//   border-radius: 2px; }
+//   .color:first-of-type {
+//     margin-left: 20px; }
+//
+// .add-to-cart, .like {
+//   background: #ff9f1a;
+//   padding: 1.2em 1.5em;
+//   border: none;
+//   text-transform: UPPERCASE;
+//   font-weight: bold;
+//   color: #fff;
+//   -webkit-transition: background .3s ease;
+//           transition: background .3s ease;
+// text-decoration: none; /*不要下划线啦，好丑*/
+//          }
+//   .add-to-cart:hover, .like:hover {
+//     background: #b36800;
+//     color: #fff;
+//   text-decoration: none; /*不要下划线啦，好丑*/
+// }
+//
+// .not-available {
+//   text-align: center;
+//   line-height: 2em; }
+//   .not-available:before {
+//     font-family: fontawesome;
+//     content: "\f00d";
+//     color: #fff; }
+//
+//
+//
+// .tooltip-inner {
+//   padding: 1.3em; }
+//
+// @-webkit-keyframes opacity {
+//   0% {
+//     opacity: 0;
+//     -webkit-transform: scale(3);
+//             transform: scale(3); }
+//   100% {
+//     opacity: 1;
+//     -webkit-transform: scale(1);
+//             transform: scale(1); } }
+//
+// @keyframes opacity {
+//   0% {
+//     opacity: 0;
+//     -webkit-transform: scale(3);
+//             transform: scale(3); }
+//   100% {
+//     opacity: 1;
+//     -webkit-transform: scale(1);
+//             transform: scale(1); } }
+//
+// /*# sourceMappingURL=style.css.map */
+//
+// /*add-to-cart*/
+//
+// .table-shopping>thead>tr>th {
+//     font-size: 0.9em;
+//     text-transform: uppercase
+// }
+//
+// .table-shopping>tbody>tr>td {
+//     font-size: 16px
+// }
+//
+// .table-shopping>tbody>tr>td b {
+//     display: block;
+//     margin-bottom: 5px
+// }
+//
+// .table-shopping .td-name {
+//     font-weight: 400;
+//     font-size: 1.5em
+// }
+//
+// .table-shopping .td-name small {
+//     color: #999999;
+//     font-size: 0.75em;
+//     font-weight: 300
+// }
+//
+// .table-shopping .td-number {
+//     font-weight: 300;
+//     font-size: 1.3em
+// }
+//
+// .table-shopping .td-name {
+//     min-width: 200px
+// }
+//
+// .table-shopping .td-name a {
+//     color: #3C4858
+// }
+//
+// .table-shopping .td-name a:hover,.table-shopping .td-name a:focus {
+//     color: #9c27b0
+// }
+//
+// .table-shopping .td-number {
+//     text-align: right;
+//     min-width: 145px
+// }
+//
+// .table-shopping .td-number small {
+//     margin-right: 3px
+// }
+//
+// .table-shopping .img-container {
+//     width: 120px;
+//     max-height: 160px;
+//     overflow: hidden;
+//     display: block
+// }
+//
+// .table-shopping .img-container img {
+//     width: 100%
+// }
+// .table .td-total {
+//     font-weight: 500;
+//     font-size: 1.25em;
+//     padding-top: 14px;
+//     text-align: right
+// }
+// .table .td-price {
+//     font-size: 26px;
+//     font-weight: 300;
+//     margin-top: 5px;
+//     text-align: right
+// }
+// .btn.btn-round,.navbar .navbar-nav>li>a.btn.btn-round {
+//     border-radius: 30px
+//
+//
+// }
+// .total,.checkout{
+//   font-family: 'Quicksand', sans-serif;
+//   font-size: 24px;
+// }
+
+
