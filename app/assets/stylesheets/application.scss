@@ -903,21 +903,10 @@ text-decoration: none; /*不要下划线啦，好丑*/
   font-size: 24px;
 }
 
-/*商品详情--内容切换*/
-/*3种背景颜色*/
 
 
-.bg-color12 {
-  background: #F25F5C;
-}
 
-.bg-color13 {
-  background: #FFE066;
-}
 
-.bg-color15 {
-  background: #70C1B3;
-}
 
 /*商品详情*/
 .productDecription {
@@ -1059,20 +1048,7 @@ button {    margin-top: 6px;
 	font-size:13px;
 	font-weight:600;
 }
- /*导航栏*/
- .navbar {
-   width: 100%; /*铺满*/
- }
- .navbarContent {
-   width: 1200px; /*1200px，居中*/
-   margin: 0 auto;
-   height: 30px;
- }
- .navbarContent-left {
-   float: left; /*你去左边*/
-   width: 100%; /*你占一半的宽度*/
-   height: 30px;
- }
+
 
 
 
@@ -1332,4 +1308,25 @@ text-decoration: none; /*不要下划线啦，好丑*/
 .total,.checkout{
   font-family: 'Quicksand', sans-serif;
   font-size: 24px;
+}
+
+/*order*/
+.detail{
+  margin-left: 480px;
+
+}
+
+.order{
+  margin-left:480px;
+
+}
+.order-form{
+  width:1000px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid #999999;
+  border-radius: 20px;
+  padding:30px 12px ;
+  background-color: #E0E0E0;
 }
