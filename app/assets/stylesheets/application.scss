@@ -588,6 +588,15 @@
 
  /*商品列表*/
  @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
+
+ .navbar-spacer {
+   float: left; /*同样的，你也要float*/
+   width: 1px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
+   height: 17px; /*12px差不多，刚刚好*/
+   margin-top: 11px; /*调一下上边距*/
+   background: #ddd; /*分隔符的背景颜色*/
+ }
+
 body{font-family: 'Quicksand', sans-serif;}
    h4{
     	font-weight: 600;
@@ -620,7 +629,8 @@ body{font-family: 'Quicksand', sans-serif;}
 			width: 100%;
 		}
 	}
-	span.thumbnail {
+
+  span.thumbnail {
         border: 1px solid #00c4ff !important;
     border-radius: 0px !important;
     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
