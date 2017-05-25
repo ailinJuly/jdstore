@@ -587,17 +587,54 @@
  }
 
  /*商品列表*/
- @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
 
- .navbar-spacer {
-   float: left; /*同样的，你也要float*/
-   width: 1px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
-   height: 17px; /*12px差不多，刚刚好*/
-   margin-top: 11px; /*调一下上边距*/
-   background: #ddd; /*分隔符的背景颜色*/
+ .ssgList {
+     padding-top: 1px;
+     border-bottom: 1px solid #c9c9c9;
+     height: 678px;
  }
 
-body{font-family: 'Quicksand', sans-serif;}
+
+
+ .ssgList .item {
+     float: left;
+     margin-top: 33px;
+     margin-right: 60px;
+     width: 356px;
+     height: 280px;
+     border-radius: 20px;
+     overflow: hidden;
+     border: 2px solid transparent;
+     box-shadow: 1px 1px 8px #ccc;
+     transition: border .3s
+ }
+
+ .ssgList .item:hover {
+     border: 2px solid #955738;
+ }
+
+
+ .ssgList .item .productImgCon .productImg {
+     width:100%;
+ }
+
+ .ssgList .item .title {
+     margin-left: 12px;
+     font-size: 16px;
+     display: block;
+     width: 230px;
+     float: left;
+ }
+
+ .ssgList .item .time {
+     float: right;
+     margin-right: 12px;
+ }
+
+
+
+
+body{font-family: 'Noto Sans SC', sans-serif;}
    h4{
     	font-weight: 600;
 	}
@@ -634,7 +671,7 @@ body{font-family: 'Quicksand', sans-serif;}
 	}
 
   span.thumbnail {
-        border: 1px solid #00c4ff !important;
+        border: 1px solid !important;
     border-radius: 0px !important;
     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
@@ -1000,78 +1037,15 @@ text-decoration: none; /*不要下划线啦，好丑*/
  }
 
  .manner{
-   font-family: 'Quicksand', sans-serif;
+   font-family: 'Noto Sans SC', sans-serif;
    	font-size: 20px;
 
  }
 
- /*商品列表*/
- @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
-body{font-family: 'Quicksand', sans-serif;}
-   h4{
-    	font-weight: 600;
-	}
-	p{
-		font-size: 12px;
-		margin-top: 5px;
-	}
-	.price{
-		font-size: 30px;
-    	margin: 0 auto;
-    	color: #333;
-	}
-
-	.thumbnail{
-		opacity:0.70;
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-	}
-	.thumbnail:hover{
-		opacity:1.00;
-		box-shadow: 0px 0px 10px #FFBA84;
-	}
-	.line{
-		margin-bottom: 5px;
-	}
-	@media screen and (max-width: 770px) {
-		.right{
-			float:left;
-			width: 100%;
-		}
-	}
-	span.thumbnail {
-        border: 1px solid #FFBA84 !important;
-    border-radius: 0px !important;
-    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-	padding: 10px;
-}
-.container h4{margin-top:70px; margin-bottom:30px;}
-button {    margin-top: 6px;
-}
-.right {
-    float: right;
-    border-bottom: 2px solid #0a5971;
-}
-.btn-info {
-    color: #fff;
-    background-color: #19b4e2;
-    border-color: #19b4e2;
-	font-size:13px;
-	font-weight:600;
-}
-
-
-
-
-
-
-
 
 /*****************商品详情*************/
 body {
-  font-family: 'open sans';
+  font-family: 'Noto Sans SC', sans-serif;
   overflow-x: hidden; }
 
 img {
@@ -1207,7 +1181,7 @@ text-decoration: none; /*不要下划线啦，好丑*/
   text-align: center;
   line-height: 2em; }
   .not-available:before {
-    font-family: fontawesome;
+    font-family: 'Noto Sans SC', sans-serif;
     content: "\f00d";
     color: #fff; }
 
@@ -1319,7 +1293,7 @@ text-decoration: none; /*不要下划线啦，好丑*/
 
 }
 .total,.checkout{
-  font-family: 'Quicksand', sans-serif;
+  font-family:'Noto Sans SC', sans-serif;
   font-size: 24px;
 }
 

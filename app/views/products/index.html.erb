@@ -1,68 +1,25 @@
 <!--客厅大图-->
 <div class="living-carousel">  <%=image_tag'https://ws4.sinaimg.cn/large/006tNbRwgy1ffvjo1yq2vj310k0biadf.jpg'%></div>
 <!--风格菜单-->
-<div class="productDecription">
-    <!-- <div class="productDecription-menuList "> -->
-    <div class="menuList">
-        <div class="btn btn-default manner">简约</div>
-        <div class="btn btn-default manner">北欧</div>
-        <div class="btn btn-primary manner">美式</div>
-        <div class="btn btn-primary manner">日式</div>
-        <div class="btn btn-primary manner">经典</div>
-    </div>
-    <!-- <div class="btn btn-default manner">
-            <div class="productDecription-menuList-item ">欧式</div>
-            <div class="productDecription-menuList-item ">简约</div>
+<div class="menuList">
+    <div class="btn btn-default manner">简约</div>
+    <div class="btn btn-default manner">北欧</div>
+    <div class="btn btn-primary manner">日式</div>
+    <div class="btn btn-primary manner">古典</div>
+</div>
+<!-- BEGIN PRODUCTS -->
+<div class="ssgList">
+    <% @products.each do |product| %>
+        <div ng-repeat="item in codeList" class="item ng-scope">
+            <%= link_to product_path(product) do %>
+                <% if product.image.present? %>
+                    <%= image_tag(product.image.thumb.url) %>
+                <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                <% end %>
+            <% end %>
+            <span class="title ng-binding"><%= product.title %></span>
+            <span class="time ng-binding"> ￥<%= product.price %></span>
         </div>
-        <div class="productDecription-content"> -->
-    <div class="productDecription-content-item" style="display: block;"><html lang="en">
-            <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <!-- Website CSS style -->
-                <link href="css/bootstrap.min.css" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/css?family=Pacifico&subset=latin-ext,vietnamese" rel="stylesheet">
-                <!-- Website Font style -->
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-                <link rel="stylesheet" href="product.css">
-                <!-- Google Fonts -->
-                <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese" rel="stylesheet">
-                <title>Product Shop Responsive </title>
-            </head>
-            <body>
-                <div class="container">
-                    <div class="row">
-                        <!-- BEGIN PRODUCTS -->
-                        <% @products.each do |product| %>
-                            <div class="col-md-3 col-sm-6">
-                                <span class="thumbnail">
-                                    <%= link_to product_path(product) do %>
-                                        <% if product.image.present? %>
-                                            <%= image_tag(product.image.thumb.url) %>
-                                        <% else %>
-                                            <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
-                                        <% end %>
-                                    <% end %>
-                                    <h4><%= product.title %></h4>
-                                    <div class="ratings">
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </div>
-                                    <p><%= product.description %></p>
-                                    <hr class="line">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6">
-                                            <p class="price">￥<%= product.price %></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            <% end %>
-                        </body>
-                    </html>
-                </div>
-                <!-- <div class="productDecription-content-item bg-color15">内容2</div> -->
-            </div>
-        </div>
-    </div>
+    <% end %>
+</div>
