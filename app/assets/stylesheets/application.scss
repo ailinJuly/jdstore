@@ -581,7 +581,7 @@
 
 
  .manner{
-   font-family: 'Quicksand', sans-serif;
+   font-family: 'Noto Sans SC', sans-serif;
    	font-size: 20px;
 
  }
@@ -601,7 +601,10 @@ body{font-family: 'Quicksand', sans-serif;}
     	margin: 0 auto;
     	color: #333;
 	}
+.manner{
 
+  margin-right: 30px;
+}
 	.thumbnail{
 		opacity:0.70;
 		-webkit-transition: all 0.5s;

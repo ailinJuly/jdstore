@@ -14,6 +14,10 @@
             <%= p.input :price, :label => "价格" %>
         </div>
         <div class="group">
+            <%= p.input :category, label: "风格", collection: ["
+            简约", "北欧", "日式", "古典"], as: :radio_buttons, checked: "简约"%>
+        </div>
+        <div class="group">
             <%= p.input :image, as: :file %>
         </div>
         <%= p.submit "Submit" , data: { disable_with: "Submitting..." }%>
