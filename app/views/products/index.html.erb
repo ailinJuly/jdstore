@@ -8,7 +8,7 @@
     <div class="btn btn-primary manner">古典</div>
 </div>
 <!-- BEGIN PRODUCTS -->
-<div class="ssgList">
+<div class="ssgList" style="padding-left:50px">
     <% @products.each do |product| %>
         <div ng-repeat="item in codeList" class="item ng-scope">
             <%= link_to product_path(product) do %>
