@@ -1,0 +1,15 @@
+<div class="col-md-8 col-centered" style="height:600px;padding-top:70px;margin-lept:100px">
+    <h1>New appointment</h1>
+    <%= simple_form_for @appointment do |ap| %>
+        <div class="group">
+            <%= ap.input :name,:label => "姓名"%>
+        </div>
+        <div class="group">
+            <%= ap.input :phone, :label => "电话" %>
+        </div>
+        <div class="group">
+            <%= ap.input :date, :label => "预约日期" %>
+        </div>
+        <%= ap.submit "Submit" , data: { disable_with: "Submitting..." }%>
+    <% end %>
+</div>
