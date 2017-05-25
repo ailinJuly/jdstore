@@ -14,7 +14,7 @@ Rails.application.routes.draw do
      end
  end
 
-
+resources :appointments
    resources :products do
       member do
         post :add_to_cart
@@ -34,7 +34,7 @@ resources :products do
   put :favorite, on: :member
 end
  resources :favorite
- 
+
  namespace :account do
    resources :orders
     end

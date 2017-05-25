@@ -12,6 +12,10 @@
     <div class="group">
         <%= p.input :price, :label => "价格" %>
     </div>
+    <div class="group">
+        <%= p.input :category, label: "风格", collection: ["
+        简约", "北欧", "日式", "古典"], as: :radio_buttons, checked: "简约" %>
+    </div>
     <% if @product.image.present? %>
         <span>目前商品图</span> <br>
         <%= image_tag(@product.image.thumb.url) %>
