@@ -18,6 +18,7 @@ Rails.application.routes.draw do
    resources :products do
       member do
         post :add_to_cart
+
       end
    end
    resources :carts do
@@ -29,11 +30,15 @@ Rails.application.routes.draw do
 resources :orders
 resources :cart_items
 
-
+resources :products do
+  put :favorite, on: :member
+end
+ resources :favorite
+ 
  namespace :account do
    resources :orders
     end
-     resources :orders do
+    resources :orders do
    member do
      post :pay_with_alipay
      post :pay_with_wechat
