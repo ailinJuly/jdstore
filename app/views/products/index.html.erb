@@ -25,7 +25,7 @@
                         <div class="row">
                             <!-- BEGIN PRODUCTS -->
                             <% @products.each do |product| %>
-                                <div class="col-md-4 col-sm-8">
+                                <div class="col-md-3 col-sm-6">
                                     <span class="thumbnail">
                                         <%= link_to product_path(product) do %>
                                             <% if product.image.present? %>
@@ -34,19 +34,21 @@
                                                 <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
                                             <% end %>
                                         <% end %>
-                                        <hr class="line">
-                                        <h4>
-                                            <%= product.title %> ￥ <%= product.price %>
-                                        </h4>
-                                        <!-- <div class="ratings">
+                                        <h4><%= product.title %></h4>
+                                        <div class="ratings">
                                             <span class="glyphicon glyphicon-star"></span>
                                             <span class="glyphicon glyphicon-star"></span>
                                             <span class="glyphicon glyphicon-star"></span>
                                             <span class="glyphicon glyphicon-star"></span>
                                             <span class="glyphicon glyphicon-star-empty"></span>
-                                        </div> -->
-                                        <!-- <p><%= product.description %></p> -->
-                                        <!-- <hr class="line"> -->
+                                        </div>
+                                        <p><%= product.description %></p>
+                                        <hr class="line">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6">
+                                                <p class="price">￥<%= product.price %></p>
+                                            </div>
+                                        </div>
                                     </div>
                                 <% end %>
                             </body>
