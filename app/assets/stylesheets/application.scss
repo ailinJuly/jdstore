@@ -106,13 +106,13 @@
 .cart-wrap {
   float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
   margin-top: -5px; /*上边距*/
-  margin-left: 550px; /*左边距*/
+  margin-left: 450px; /*左边距*/
 }
 
 .cart {
   padding: 4px 10px; /*加内边距*/
   cursor: pointer; /*鼠标一上去，显示手型*/
-  border: 1px solid #DFDFDF; /*1像素，实线，灰色*/
+
   background: #F5F5F5; /*灰色背景*/
   font-size: 12px; /*字体小一点好看*/
 }
@@ -601,7 +601,7 @@
      float: left;
      margin-top: 33px;
      margin-right: 60px;
-     width: 356px;
+     width: 345px;
      height: 280px;
      border-radius: 20px;
      overflow: hidden;
@@ -1031,10 +1031,16 @@ img {
 }
 
 .card-title {
-
       line-height: 1.5em;
     }
-.checkout{
-  margin: 20px 20px 0 0;
-  text-align: center;
+
+/*订单画面0526jy－－end*/
+
+/*支付画面0526jy*/
+
+.order-pay{
+  width: 800px;
+  margin: 30px 50px;
+  height: 1018px;
+  font-family: 'Noto Sans SC', sans-serif;
 }

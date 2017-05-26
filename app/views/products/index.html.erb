@@ -9,17 +9,19 @@
 </div>
 <!-- BEGIN PRODUCTS -->
 <div class="ssgList" style="padding-left:50px">
-    <% @products.each do |product| %>
-        <div ng-repeat="item in codeList" class="item ng-scope">
-            <%= link_to product_path(product) do %>
-                <% if product.image.present? %>
-                    <%= image_tag(product.image.thumb.url) %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+    <div class="row">
+        <% @products.each do |product| %>
+            <div ng-repeat="item in codeList" class="item ng-scope">
+                <%= link_to product_path(product) do %>
+                    <% if product.image.present? %>
+                        <%= image_tag(product.image.thumb.url) %>
+                    <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                    <% end %>
                 <% end %>
-            <% end %>
-            <span class="title ng-binding"><%= product.title %></span>
-            <span class="time ng-binding"> ￥<%= product.price %></span>
-        </div>
-    <% end %>
+                <span class="title ng-binding"><%= product.title %></span>
+                <span class="time ng-binding"> ￥<%= product.price %></span>
+            </div>
+        <% end %>
+    </div>
 </div>
