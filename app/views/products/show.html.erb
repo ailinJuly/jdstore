@@ -1,56 +1,46 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <div class="container-fliud">
-            <div class="wrapper row">
-                <div class="preview col-md-6">
-                    <div class="preview-pic tab-content">
-                        <% if @product.image.present? %>
-                            <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
-                        <% else %>
-                            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                        <% end %>
-                    </div>
-                </div>
-                <div class="details">
-                    <h3 class="product-title"><%= @product.title %></h3>
-                    <div class="rating">
-                        <div class="stars">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                    </div>
-                    <p class="product-description"><%=@product.description %></p>
-                    <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>
-                    <div class="action">
-                        <button class="add-to-cart btn btn-default" type="button">
-                            <% if @product.quantity.present? && @product.quantity > 0 %>
-                                <%= link_to("add to cart",add_to_cart_product_path(@product),:method=> :post) %>
-                            <% else %>
-                                对不起，此商品已经下架！
-                            <% end %></button>
-                        <% if current_user && current_user.is_favorite_of?(@product) %>
-                            <button class="like btn btn-default" type="button">
-                                <span class="fa fa-heart">
-                                    <%= link_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put) %></span>
-                            </button>
-                        <% else %>
-                            <button class="like btn btn-default" type="button">
-                                <span class="fa fa-heart-o"></span>  <%= link_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
-                            </button>
-                        <% end %>
-                    </div>
-                </div>
+<div class="productDetail">
+    <div class="productDetail-left bg-color11">
+        <div class="productDetail-left-bigImage bg-color13">
+            <div class="tab-content">
+                <% if @product.image.present? %>
+                    <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
+                <% else %>
+                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                <% end %>
             </div>
         </div>
     </div>
+    <div class="productDetail-right bg-color12">
+        <h3 class="product-title"><%= @product.title %></h3>
+        <div class="rating">
+            <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </div>
+        <p class="product-description"><%=@product.description %></p>
+        <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>
+        <div class="action">
+            <button class="add-to-cart btn btn-default" type="button">
+                <% if @product.quantity.present? && @product.quantity > 0 %>
+                    <%= link_to("add to cart",add_to_cart_product_path(@product),:method=> :post) %>
+                <% else %>
+                    对不起，此商品已经下架！
+                <% end %></button>
+            <% if current_user && current_user.is_favorite_of?(@product) %>
+                <button class="like btn btn-default" type="button">
+                    <span class="fa fa-heart">
+                        <%= link_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put) %></span>
+                </button>
+            <% else %>
+                <button class="like btn btn-default" type="button">
+                    <span class="fa fa-heart-o"></span>  <%= link_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
+                </button>
+            <% end %>
+        </div>
+    </div>
 </div>
-</body>
-</html>
+</div>

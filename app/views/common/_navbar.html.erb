@@ -8,7 +8,7 @@
     <div class="navbar">
         <ul class="navbar-left">
             <li class="navbar-listItem-right">
-                <a href="/">MEIWO</a>
+                <a href="/"><img src='<%= image_url 'logo-lit.png' %> '>  Dream House</a>
             </li>
             <li class="navbar-spacer-left fl"></li>
             <li class="navbar-listItem-right">
@@ -38,10 +38,10 @@
             <% else %>
                 <li class="navbar-listItem-right">
                     <li class="dropdown">
-                        <div class="btn .btn-link dropdown-toggle" type="link" data-toggle="dropdown">
+                        <a class="btn .btn-link dropdown-toggle" type="link" data-toggle="dropdown">
                             Hi!,<%= current_user.email %>
                             <span class="caret"></span>
-                        </div>
+                        </a>
                         <ul class="dropdown-menu">
                             <% if current_user.admin? %>
                                 <li><%= link_to("Admin选单",admin_products_path) %></li>
