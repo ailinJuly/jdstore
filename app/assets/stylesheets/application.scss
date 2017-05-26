@@ -642,11 +642,11 @@ body{font-family: 'Noto Sans SC', sans-serif;}
 		font-size: 12px;
 		margin-top: 5px;
 	}
-	.price{
-		font-size: 30px;
-    	margin: 0 auto;
-    	color: #333;
-	}
+	// .price{
+	// 	font-size: 30px;
+  //   	margin: 0 auto;
+  //   	color: #333;
+	// }
 .manner{
 
   margin-right: 30px;
@@ -697,298 +697,6 @@ button {    margin-top: 6px;
 
 
 
-
-/*****************商品详情*************/
-body {
-  font-family: 'open sans';
-  overflow-x: hidden; }
-
-img {
-  max-width: 100%; }
-
-.preview {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-  @media screen and (max-width: 996px) {
-    .preview {
-      margin-bottom: 20px; } }
-
-.preview-pic {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
-
-.preview-thumbnail.nav-tabs {
-  border: none;
-  margin-top: 15px; }
-  .preview-thumbnail.nav-tabs li {
-    width: 18%;
-    margin-right: 2.5%; }
-    .preview-thumbnail.nav-tabs li img {
-      max-width: 100%;
-      display: block; }
-    .preview-thumbnail.nav-tabs li a {
-      padding: 0;
-      margin: 0; }
-    .preview-thumbnail.nav-tabs li:last-of-type {
-      margin-right: 0; }
-
-.tab-content {
-  overflow: hidden; }
-  .tab-content img {
-    width: 100%;
-    -webkit-animation-name: opacity;
-            animation-name: opacity;
-    -webkit-animation-duration: .3s;
-            animation-duration: .3s; }
-
-.card {
-  margin-top: 50px;
-  background: #eee;
-  padding: 3em;
-  line-height: 1.5em; }
-
-@media screen and (min-width: 997px) {
-  .wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; } }
-
-.details {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-.colors {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
-
-.product-title,.sizes, .colors {
-  text-transform: UPPERCASE;
-  font-weight: bold; }
-
-  .price1{
-    text-transform: UPPERCASE;
-    font-weight: bold;
-      padding-up: 20px;
-    padding-bottom: 20px;
-  }
-
-.checked, .price span {
-  color: #ff9f1a; }
-
-.product-title, .rating, .product-description, .price, .vote, .sizes {
-  margin-bottom: 15px; }
-
-.product-title {
-  margin-top: 0; }
-
-.size {
-  margin-right: 10px; }
-  .size:first-of-type {
-    margin-left: 40px; }
-
-.color {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  height: 2em;
-  width: 2em;
-  border-radius: 2px; }
-  .color:first-of-type {
-    margin-left: 20px; }
-
-.add-to-cart, .like {
-  background: #ff9f1a;
-  padding: 1.2em 1.5em;
-  border: none;
-  text-transform: UPPERCASE;
-  font-weight: bold;
-  color: #fff;
-  -webkit-transition: background .3s ease;
-          transition: background .3s ease;
-text-decoration: none; /*不要下划线啦，好丑*/
-         }
-  .add-to-cart:hover, .like:hover {
-    background: #b36800;
-    color: #fff;
-  text-decoration: none; /*不要下划线啦，好丑*/
-}
-
-.not-available {
-  text-align: center;
-  line-height: 2em; }
-  .not-available:before {
-    font-family: fontawesome;
-    content: "\f00d";
-    color: #fff; }
-
-
-
-.tooltip-inner {
-  padding: 1.3em; }
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-/*# sourceMappingURL=style.css.map */
-
-/*add-to-cart*/
-
-.table-shopping>thead>tr>th {
-    font-size: 0.9em;
-    text-transform: uppercase
-}
-
-.table-shopping>tbody>tr>td {
-    font-size: 16px
-}
-
-.table-shopping>tbody>tr>td b {
-    display: block;
-    margin-bottom: 5px
-}
-
-.table-shopping .td-name {
-    font-weight: 400;
-    font-size: 1.5em
-}
-
-.table-shopping .td-name small {
-    color: #999999;
-    font-size: 0.75em;
-    font-weight: 300
-}
-
-.table-shopping .td-number {
-    font-weight: 300;
-    font-size: 1.3em
-}
-
-.table-shopping .td-name {
-    min-width: 200px
-}
-
-.table-shopping .td-name a {
-    color: #3C4858
-}
-
-.table-shopping .td-name a:hover,.table-shopping .td-name a:focus {
-    color: #9c27b0
-}
-
-.table-shopping .td-number {
-    text-align: right;
-    min-width: 145px
-}
-
-.table-shopping .td-number small {
-    margin-right: 3px
-}
-
-.table-shopping .img-container {
-    width: 120px;
-    max-height: 160px;
-    overflow: hidden;
-    display: block
-}
-
-.table-shopping .img-container img {
-    width: 100%
-}
-.table .td-total {
-    font-weight: 500;
-    font-size: 1.25em;
-    padding-top: 14px;
-    text-align: right
-}
-.table .td-price {
-    font-size: 26px;
-    font-weight: 300;
-    margin-top: 5px;
-    text-align: right
-}
-.btn.btn-round,.navbar .navbar-nav>li>a.btn.btn-round {
-    border-radius: 30px
-
-
-}
-.total,.checkout{
-  font-family: 'Quicksand', sans-serif;
-  font-size: 24px;
-}
-
-
-
-
-
-
-/*商品详情*/
-.productDecription {
-	width: 1200px;
-  text-align: center;
-	margin: 20px auto;
-	border: 1px solid #50514F;
-  line-height: 30px;
-}
-
-.productDecription-menuList {
-	height: 35px;
-}
-
-.productDecription-menuList-item {
-	float: left;
-	width: 175px;
-	height: 35px;
-}
-
-.productDecription-content {
-	width: 1250px;
-  height: 800px;
-  overflow-y: auto;
-	margin: 5px auto;
-}
-
-.productDecription-content-item {
-  display: none;
-  width: 750px;
-  height: 500px;
-}
 
 
 
@@ -1089,11 +797,9 @@ img {
 .tab-content {
   overflow: hidden; }
   .tab-content img {
-    width: 100%;
-    -webkit-animation-name: opacity;
-            animation-name: opacity;
-    -webkit-animation-duration: .3s;
-            animation-duration: .3s; }
+    width:356px;
+  height: 356px;
+}
 
 .card {
   margin-top: 50px;
@@ -1109,15 +815,10 @@ img {
     display: flex; } }
 
 .details {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  height: 356px;
+  width: 600px;
+  overflow-y:hidden;
+ }
 
 .colors {
   -webkit-box-flex: 1;
@@ -1133,58 +834,41 @@ img {
     text-transform: UPPERCASE;
     font-weight: bold;
       padding-up: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
+    margin-top: 105px;
   }
 
 .checked, .price span {
   color: #ff9f1a; }
 
-.product-title, .rating, .product-description, .price, .vote, .sizes {
-  margin-bottom: 15px; }
+.product-title, .product-description {
+  margin-bottom: 35px; }
 
-.product-title {
-  margin-top: 0; }
+.product-description{
+  font-size: 1.1em;
+  width: 280px;
 
-.size {
-  margin-right: 10px; }
-  .size:first-of-type {
-    margin-left: 40px; }
-
-.color {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  height: 2em;
-  width: 2em;
-  border-radius: 2px; }
-  .color:first-of-type {
-    margin-left: 20px; }
-
-.add-to-cart, .like {
-  background: #ff9f1a;
-  padding: 1.2em 1.5em;
-  border: none;
-  text-transform: UPPERCASE;
-  font-weight: bold;
-  color: #fff;
-  -webkit-transition: background .3s ease;
-          transition: background .3s ease;
-text-decoration: none; /*不要下划线啦，好丑*/
-         }
-  .add-to-cart:hover, .like:hover {
-    background: #b36800;
-    color: #fff;
-  text-decoration: none; /*不要下划线啦，好丑*/
 }
+.product-title {
+  margin-top: 10px; }
 
-.not-available {
-  text-align: center;
-  line-height: 2em; }
-  .not-available:before {
-    font-family: 'Noto Sans SC', sans-serif;
-    content: "\f00d";
-    color: #fff; }
 
+  .add-to-cart, .like {
+    background: #ff9f1a;
+    padding: 1.2em 1.5em;
+    border: none;
+    text-transform: UPPERCASE;
+    font-weight: bold;
+    color: #fff;
+    -webkit-transition: background .3s ease;
+            transition: background .3s ease;
+      text-decoration: none;
+    margin-top:20px;
+    }
+  .add-to-cart:hover, .like:hover {
+      background: #b36800;
+      color: #fff;
+  }
 
 
 .tooltip-inner {
@@ -1298,7 +982,7 @@ text-decoration: none; /*不要下划线啦，好丑*/
 }
 
 /*order*/
-.detail{
+.detail1{
   margin-left: 480px;
 
 }

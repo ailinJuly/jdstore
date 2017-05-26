@@ -9,13 +9,11 @@
             <div class="wrapper row">
                 <div class="preview col-md-6">
                     <div class="preview-pic tab-content">
-                        <div class="tab-pane active" id="pic-1">
-                            <% if @product.image.present? %>
-                                <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
-                            <% else %>
-                                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                            <% end %>
-                        </div>
+                        <% if @product.image.present? %>
+                            <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
+                        <% else %>
+                            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                        <% end %>
                     </div>
                 </div>
                 <div class="details">
@@ -28,11 +26,9 @@
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                         </div>
-                        <span class="review-no">41 reviews</span>
                     </div>
                     <p class="product-description"><%=@product.description %></p>
                     <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>
-                    <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
                     <div class="action">
                         <button class="add-to-cart btn btn-default" type="button">
                             <% if @product.quantity.present? && @product.quantity > 0 %>
@@ -42,8 +38,8 @@
                             <% end %></button>
                         <% if current_user && current_user.is_favorite_of?(@product) %>
                             <button class="like btn btn-default" type="button">
-                                <span class="fa fa-heart"></span>
-                                <%= link_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put) %>
+                                <span class="fa fa-heart">
+                                    <%= link_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put) %></span>
                             </button>
                         <% else %>
                             <button class="like btn btn-default" type="button">

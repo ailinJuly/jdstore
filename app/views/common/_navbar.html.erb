@@ -38,10 +38,10 @@
             <% else %>
                 <li class="navbar-listItem-right">
                     <li class="dropdown">
-                        <a class="btn .btn-link dropdown-toggle" type="link" data-toggle="dropdown">
+                        <div class="btn .btn-link dropdown-toggle" type="link" data-toggle="dropdown">
                             Hi!,<%= current_user.email %>
                             <span class="caret"></span>
-                        </a>
+                        </div>
                         <ul class="dropdown-menu">
                             <% if current_user.admin? %>
                                 <li><%= link_to("Admin选单",admin_products_path) %></li>
