@@ -4,7 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<div class="navbar-wrap">
+<div class="navbar-wrap"  id="navbar">
     <div class="navbar">
         <ul class="navbar-left">
             <li class="navbar-listItem-right">
@@ -45,6 +45,7 @@
                         <ul class="dropdown-menu">
                             <% if current_user.admin? %>
                                 <li><%= link_to("Admin选单",admin_products_path) %></li>
+                                <li><%= link_to('顾客预约单',appointments_path) %>    </li>
                             <% end %>
                             <li><%= link_to('我的收藏'.html_safe, favorite_index_path) %>    </li>
                             <li>
