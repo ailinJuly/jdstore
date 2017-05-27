@@ -1,7 +1,7 @@
-<div class="login_register_sub appoint-detail">
-    <h2 >请留下你的预约信息</h2>
-    <div class="personality">10秒预约,免费获取专属客户经理服务 </div>
-    <%= simple_form_for @appointment do |ap| %>
+<h2 class="a-title">请留下你的预约信息</h2>
+<div class="personality">10秒预约,免费获取专属客户经理服务 </div>
+<%= simple_form_for @appointment do |ap| %>
+    <div class="login_register_sub appoint-detail">
         <div class="login_register_su1">
             <span style="font-size: 15px;color: #333333;padding-top:5px">姓名：</span>
             <div class="input">
@@ -14,8 +14,9 @@
                 <%= ap.input :phone, label: false, placeholder:"请输入您的电话" , input_html: { class: "form-control"} %>
             </div>
         </div>
-        <div class="form-actions text-center" style="width: 400px;margin: 50px auto;">
-            <%= ap.submit "立即预约", data: { disable_with: "Submitting..." }%>
-        </div>
-    <% end %>
-</div>
+    </div>
+    <div class="center-button">
+        <%= ap.submit "立即预约", class: "button",
+                      data: { disable_with: "Submitting..." } %>
+    </div>
+<% end %>
