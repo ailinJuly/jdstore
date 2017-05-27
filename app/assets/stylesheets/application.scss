@@ -43,11 +43,13 @@
   //  width: 100%; /*铺满屏幕*/
    margin-left: -15px;
    margin-right: -15px;
-   background: #F5F5F5; /*背景颜色*/
+
    font-size: 20px; /*字体12px*/
    height: 60px; /*设置高度*/
    line-height: 60px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
    color: #717171; /*字体颜色*/
+   background: #F5F5F5; /*背景颜色*/
+
  }
 
  .navbar {
@@ -153,6 +155,7 @@
 
 .cart a:hover {
   color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+  text-decoration: none; /*不要下划线*/
 }
 
 .dropdown {
@@ -641,7 +644,8 @@
  }
 
  .ssgList .item:hover {
-     border: 2px solid #955738;
+     border: 2px solid #4bc6ff;
+     text-decoration: none; /*不要下划线*/
  }
 
 
@@ -690,6 +694,7 @@ body{font-family: 'Noto Sans SC', sans-serif;}
 	.thumbnail:hover{
 		opacity:1.00;
 		box-shadow: 0px 0px 10px #4bc6ff;
+    text-decoration: none; /*不要下划线*/
 	}
 	.line{
 		margin-bottom: 5px;
@@ -714,7 +719,7 @@ button {    margin-top: 6px;
 }
 .right {
     float: right;
-    border-bottom: 2px solid #0a5971;
+    border-bottom: 2px solid #4bc6ff;
 }
 .btn-info {
     color: #fff;
@@ -862,8 +867,9 @@ img {
     margin-top:20px;
     }
   .add-to-cart:hover, .like:hover {
-      background: #b36800;
+      background: #4bc6ff;
       color: #fff;
+      text-decoration: none; /*不要下划线*/
   }
 
 
@@ -934,6 +940,7 @@ img {
 
 .table-shopping .td-name a:hover,.table-shopping .td-name a:focus {
     color: #9c27b0
+
 }
 
 .table-shopping .td-number {
@@ -1038,6 +1045,19 @@ img {
   margin-bottom: 20px;
 
 }
+.cart-button{
+      float: right;
+      text-align: center;
+      font-weight: 400;
+      background-color: #4bc6ff;
+      font-size: 18px;
+      width: 210px;
+      height: 39px;
+      line-height: 39px;
+      border-radius: 12px;
+      margin-bottom: 100px;
+      color:white;
+    }
 
 /*购物车0526jy----end*/
 
@@ -1064,6 +1084,8 @@ img {
       line-height: 1.5em;
     }
 
+
+
 /*订单画面0526jy－－end*/
 
 /*支付画面0526jy*/
@@ -1074,17 +1096,92 @@ img {
   height: 1018px;
   font-family: 'Noto Sans SC', sans-serif;
 }
+
+.checkout-button{
+      float: right;
+      text-align: center;
+      font-weight: 400px;
+      background-color: #4bc6ff;
+      font-size: 20px;
+      width: 150px;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 12px;
+      margin-right: 10px;
+      margin-bottom: 100px;
+      border-color:  #4bc6ff;
+      color: white;
+    }
+
 /*支付画面0526jy--end*/
 
 /*预约画面0526jy*/
 .appoint-detail{
-  height: 100%;
-  width: 50%;
+  height: 190px;
+  width: 100%;
   text-align: center;
-  margin: 0 auto;
+  margin-top: 10px;
   font-family: 'Noto Sans SC', sans-serif;
 }
 .login_register_su1{
-width: 360px !important;height: 54px;	border:1px solid #e6e6e6;font-size: 15px;padding: 0 20px;margin-top: 25px;border-radius: 5px;}
+  width:400px !important;
+  height: 54px;
+  font-size: 15px;
+  padding: 0 20px;
+  margin-top: 20px;
+  margin-left: 400px;
+  border-radius: 5px;
+}
+.input{
+  float: right;
+  width: 290px;
+  height: 56px;
+
+}
+.a-title{
+
+  text-align: center;
+    margin-top: 90px;
+  margin-bottom: 10px;
+}
+ .personality{
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+.button{
+  float: none;
+  background-color: #4bc6ff;
+  font-size: 20px;
+  width: 290px;
+  border-radius: 5px;
+
+  margin-left: 480px;
+  margin-bottom: 100px;
+
+}
 
 /*预约画面0526jy－－end*/
+
+/*后台画面0527jy*/
+.newproduct{
+
+  width: 50%;
+  height:800px;
+  padding-top:70px;
+  margin-left:100px
+}
+
+/*后台画面05267y－－end*/
+
+
+.panel-left{
+	float: left; /*你去左边*/
+  margin-left: 5px;
+	height: 518px;
+}
+
+.panel-right{
+	float: right; /*你去右边*/
+	width: 744px;
+	height: 518px;
+}

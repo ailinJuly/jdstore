@@ -11,7 +11,9 @@ class AppointmentsController < ApplicationController
   @appointment = Appointment.new(appoint_params)
       if
         @appointment.save
-        redirect_to appointments_path
+        flash[:alert]= "您已经成功提交预约单，请等候客服电话！"
+        redirect_to root_path
+
       else
         render :new
       end
