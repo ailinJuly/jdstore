@@ -1048,16 +1048,15 @@ img {
 
 /*预约画面0526jy*/
 .appoint-detail{
-  height: 400px;
+  height: 190px;
   width: 100%;
   text-align: center;
-  margin-top: 90px;
+  margin-top: 10px;
   font-family: 'Noto Sans SC', sans-serif;
 }
 .login_register_su1{
   width:400px !important;
   height: 54px;
-  border:0px solid #e6e6e6;
   font-size: 15px;
   padding: 0 20px;
   margin-top: 20px;
@@ -1066,14 +1065,32 @@ img {
 }
 .input{
   float: right;
-
   width: 290px;
   height: 56px;
 
 }
-.personality{
+.a-title{
 
-  margin: 50px 0 20px 0;
+  text-align: center;
+    margin-top: 90px;
+  margin-bottom: 10px;
 }
+ .personality{
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+.button{
+  float: none;
+  background-color: #4bc6ff;
+  font-size: 20px;
+  width: 290px;
+  border-radius: 5px;
+
+  margin-left: 480px;
+  margin-bottom: 100px;
+
+}
+
+
 
 /*预约画面0526jy－－end*/
