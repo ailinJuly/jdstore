@@ -130,6 +130,7 @@
 
 .cart a:hover {
   color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+  text-decoration: none; /*不要下划线*/
 }
 
  /*轮播图*/
@@ -612,6 +613,7 @@
 
  .ssgList .item:hover {
      border: 2px solid #4bc6ff;
+     text-decoration: none; /*不要下划线*/
  }
 
 
@@ -660,6 +662,7 @@ body{font-family: 'Noto Sans SC', sans-serif;}
 	.thumbnail:hover{
 		opacity:1.00;
 		box-shadow: 0px 0px 10px #4bc6ff;
+    text-decoration: none; /*不要下划线*/
 	}
 	.line{
 		margin-bottom: 5px;
@@ -684,7 +687,7 @@ button {    margin-top: 6px;
 }
 .right {
     float: right;
-    border-bottom: 2px solid #0a5971;
+    border-bottom: 2px solid #4bc6ff;
 }
 .btn-info {
     color: #fff;
@@ -834,6 +837,7 @@ img {
   .add-to-cart:hover, .like:hover {
       background: #4bc6ff;
       color: #fff;
+      text-decoration: none; /*不要下划线*/
   }
 
 
@@ -904,6 +908,7 @@ img {
 
 .table-shopping .td-name a:hover,.table-shopping .td-name a:focus {
     color: #9c27b0
+
 }
 
 .table-shopping .td-number {
@@ -1008,6 +1013,19 @@ img {
   margin-bottom: 20px;
 
 }
+.cart-button{
+      float: right;
+      text-align: center;
+      font-weight: 400;
+      background-color: #4bc6ff;
+      font-size: 18px;
+      width: 210px;
+      height: 39px;
+      line-height: 39px;
+      border-radius: 12px;
+      margin-bottom: 100px;
+      color:white;
+    }
 
 /*购物车0526jy----end*/
 
@@ -1034,6 +1052,8 @@ img {
       line-height: 1.5em;
     }
 
+
+
 /*订单画面0526jy－－end*/
 
 /*支付画面0526jy*/
@@ -1044,6 +1064,23 @@ img {
   height: 1018px;
   font-family: 'Noto Sans SC', sans-serif;
 }
+
+.checkout-button{
+      float: right;
+      text-align: center;
+      font-weight: 400px;
+      background-color: #4bc6ff;
+      font-size: 20px;
+      width: 150px;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 12px;
+      margin-right: 10px;
+      margin-bottom: 100px;
+      border-color:  #4bc6ff;
+      color: white;
+    }
+
 /*支付画面0526jy--end*/
 
 /*预约画面0526jy*/

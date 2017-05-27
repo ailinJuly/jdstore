@@ -1,5 +1,5 @@
-<div class="order-detail col-md-10">
-    <h2> 购物明细 </h2>
+<div class="order-detail col-md-10" style="font-family: 'Noto Sans SC', sans-serif">
+    <h3> 购物明细 </h3>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -30,25 +30,25 @@
         </span>
     </div>
     <hr>
-    <h2> 订单资讯 </h2>
+    <h2 style="font-family: 'Noto Sans SC', sans-serif"> 订单资讯 </h2>
     <div class="card-title">
         <%= simple_form_for @order do |f| %>
             <legend> 订购人</legend>
             <div class="form-group col-lg-6">
-                <%= f.input :billing_name  %>
+                <%= f.input :billing_name, label: false,placeholder: '请输入您的姓名', autofocus: true, input_html: { class: "form-control"}%>
             </div>
             <div class="form-group col-lg-6">
-                <%= f.input :billing_address  %>
+                <%= f.input :billing_address, label: false,placeholder: '请输入您的地址', input_html: { class: "form-control"}%>
             </div>
             <legend> 收货人</legend>
             <div class="form-group col-lg-6">
-                <%= f.input :shipping_name  %>
+                <%= f.input :shipping_name, label: false,placeholder: '请输入收货人的姓名', input_html: { class: "form-control"}%>
             </div>
             <div class="form-group col-lg-6">
-                <%= f.input :shipping_address  %>
+                <%= f.input :shipping_address , label: false,placeholder: '请输入收货人地址', input_html: { class: "form-control"}%>
             </div>
             <div class="checkout">
-                <%= f.submit "生成订单", class: "btn btn-raised btn-default btn-round pull-right",
+                <%= f.submit "生成订单", class: "checkout-button",
                             data: { disable_with: "Submitting..." } %>
             </div>
         <% end %>
