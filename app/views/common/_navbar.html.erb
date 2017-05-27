@@ -7,26 +7,31 @@
 <div class="navbar-wrap">
     <div class="navbar">
         <ul class="navbar-left">
-            <li class="navbar-listItem-right">
-                <a href="/"><img src='<%= image_url 'logo-lit.png' %> '>  Dream House</a>
+            <li class="navbar-listItem-left">
+              <a href="/">  <%= image_tag 'logo-lit.png' %>    Dream House</a>
+                <!-- <a href="/"><img src='<%= image_url 'logo-lit.png' %> '>  Dream House</a> -->
             </li>
             <li class="navbar-spacer-left fl"></li>
-            <li class="navbar-listItem-right">
+            <li class="navbar-listItem-left">
                 <a href="/">首页</a>
             </li>
-            <li class="navbar-listItem-right">
+            <li class="navbar-listItem-left">
                 <%= link_to("装修",products_path) %>
             </li>
         </ul>
-        <div class="cart-wrap">
-            <div class="cart">
-                <a href="/carts" ><%= link_to carts_path do %>
-                        <i class="fa fa-shopping-cart cart-icon "></i>我的购物车(<%= current_cart.products.count %>)
-                    <% end %>
-                </a>
-            </div>
-        </div>
-        <ul class="navbar-list">
+
+
+        <!-- <ul class="navbar-right"> -->
+        <ul class="nav navbar-nav navbar-right">
+          <div class="cart-wrap">
+              <div class="cart">
+                  <a href="/carts" ><%= link_to carts_path do %>
+                          <i class="fa fa-shopping-cart cart-icon "></i>我的购物车(<%= current_cart.products.count %>)
+                      <% end %>
+                  </a>
+              </div>
+          </div>
+
             <% if !current_user %>
                 <li class="navbar-listItem-right">
                     <%= link_to("注册", new_user_registration_path) %>
@@ -36,9 +41,10 @@
                     <%= link_to("登入", new_user_session_path) %>
                 </li>
             <% else %>
-                <li class="navbar-listItem-right">
+                <!-- <li class="navbar-listItem-right"> -->
+
                     <li class="dropdown">
-                        <a class="btn .btn-link dropdown-toggle" type="link" data-toggle="dropdown">
+                        <a class="btn .btn-link dropdown-toggle" role="menu" data-toggle="dropdown">
                             Hi!,<%= current_user.email %>
                             <span class="caret"></span>
                         </a>
@@ -53,8 +59,11 @@
                             <li><%= link_to("登出",destroy_user_session_path, method: :delete) %></li>
                         </ul>
                     </li>
-                </li>
+                <!-- </li> -->
+
             <% end %>
+            <!-- </ul> -->
+
         </ul>
     </div>
 </div>
