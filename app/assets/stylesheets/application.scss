@@ -43,11 +43,13 @@
   //  width: 100%; /*铺满屏幕*/
    margin-left: -15px;
    margin-right: -15px;
-   background: #F5F5F5; /*背景颜色*/
+
    font-size: 20px; /*字体12px*/
    height: 60px; /*设置高度*/
    line-height: 30px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
    color: #717171; /*字体颜色*/
+   background: #F5F5F5; /*背景颜色*/
+
  }
 
  .navbar {
