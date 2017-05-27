@@ -1,19 +1,24 @@
-<h2>订单列表 </h2>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>姓名</th>
-            <th>联系方式</th>
-            <th>预约日期</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @appointments.each do |ap| %>
-            <tr>
-                <td> <%= ap.name%> </td>
-                <td> <%= ap.phone %> </td>
-                <td> <%= ap.date %> </td>
-            </tr>
-        <% end %>
-    </tbody>
-</table>
+<div class="customer-list">
+    <div class="panel panel-info">
+        <div class="panel-heading">订单列表 </div>
+        <div class="panel-body">
+            <p>客服看到预约信息后，需要在10秒钟内联系客户。</p>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>联系方式</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @appointments.each do |ap| %>
+                    <tr>
+                        <td> <%= ap.name%> </td>
+                        <td> <%= ap.phone %> </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

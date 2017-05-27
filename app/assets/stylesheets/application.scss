@@ -1141,17 +1141,21 @@ img {
   margin-left:100px
 }
 
-/*后台画面05267y－－end*/
+/*后台画面0527y－－end*/
 
 
-.panel-left{
-	float: left; /*你去左边*/
-  margin-left: 5px;
-	height: 518px;
+/*顾客预约单画面0527y*/
+
+.customer-list{
+  height: 500px;
+  overflow-y:hidden;
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 25px;
+  border-radius: 1.2em;
 }
 
-.panel-right{
-	float: right; /*你去右边*/
-	width: 744px;
-	height: 518px;
-}
+/*顾客预约单画面0527y－－end*/
