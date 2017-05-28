@@ -6,7 +6,7 @@ layout "admin"
 
   def index
     @products = Product.all.recent
-    flash[:alert]="Welcome!"
+  
   end
   def show
     @product = Product.find(params[:id])
