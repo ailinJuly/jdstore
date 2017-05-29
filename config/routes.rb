@@ -27,7 +27,7 @@ resources :appointments
        post :checkout
      end
    end
-#resources :orders
+resources :orders
 resources :cart_items
 
 #resources :products do
