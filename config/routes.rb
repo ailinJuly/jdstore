@@ -18,8 +18,8 @@ resources :appointments
    resources :products do
       member do
         post :add_to_cart
-
       end
+      put :favorite, on: :member
    end
    resources :carts do
      collection do
@@ -30,9 +30,9 @@ resources :appointments
 resources :orders
 resources :cart_items
 
-resources :products do
-  put :favorite, on: :member
-end
+#resources :products do
+#  put :favorite, on: :member
+#end
  resources :favorite
 
  namespace :account do
