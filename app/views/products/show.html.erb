@@ -23,25 +23,25 @@
         </div>
         <p class="product-description"><%=@product.description %></p>
         <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>
-        <div class="action">
-            <button class="add-to-cart btn btn-default" type="button">
+        <div class="action" style="width:250px;height:200px">
+            <div class="add-to-cart" style="float:left;margin-right:0.2em">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
                     <%= button_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
                 <% else %>
                     对不起，此商品已经下架！
                 <% end %>
-            </button>
-            <% if current_user && current_user.is_favorite_of?(@product) %>
-                <button class="like btn btn-default" type="button">
+            </div>
+            <div class="like" style="float:right">
+                <% if current_user && current_user.is_favorite_of?(@product) %>
                     <span class="fa fa-heart">
-                        <%= button_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put) %></span>
-                </button>
-            <% else %>
-                <button class="like btn btn-default" type="button">
-                    <span class="fa fa-heart-o"></span>  <%= button_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
-                </button>
-            <% end %>
+                        <%= button_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put) %>
+                    </span>
+                <% else %>
+                    <span class="fa fa-heart-o">
+                        <%= button_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
+                    </span>
+                <% end %>
+            </div>
         </div>
     </div>
-</div>
 </div>
