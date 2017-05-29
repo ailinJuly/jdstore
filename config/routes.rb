@@ -14,7 +14,8 @@ Rails.application.routes.draw do
      end
  end
 
-resources :appointments
+  resources :appointments
+
    resources :products do
       member do
         post :add_to_cart
@@ -30,15 +31,13 @@ resources :appointments
 resources :orders
 resources :cart_items
 
-#resources :products do
-#  put :favorite, on: :member
-#end
+
  resources :favorite
 
  namespace :account do
    resources :orders
-    end
-    resources :orders do
+ end
+ resources :orders do
    member do
      post :pay_with_alipay
      post :pay_with_wechat
