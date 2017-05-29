@@ -26,10 +26,11 @@
         <div class="action">
             <button class="add-to-cart btn btn-default" type="button">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
-                    <%= link_to("add to cart",add_to_cart_product_path(@product),:method=> :post) %>
+                    <%= link_to("加入购物车",add_to_cart_product_path(@product),:method=> :post) %>
                 <% else %>
                     对不起，此商品已经下架！
-                <% end %></button>
+                <% end %>
+            </button>
             <% if current_user && current_user.is_favorite_of?(@product) %>
                 <button class="like btn btn-default" type="button">
                     <span class="fa fa-heart">
