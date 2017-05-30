@@ -26,7 +26,10 @@
         <div class="action" style="width:260px;height:200px">
             <div class="add-to-cart" style="float:left;margin-right:0.05em">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
-                    <%= button_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
+                    <form class="button_to " method="post" action="/products/8/add_to_cart">
+                        <input class="addcart-btn" type="submit" value="加入购物车">
+                        <input type="hidden" name="authenticity_token" value="Km5l9ujQW2/rRcjSoGzDbZ2js86qwWugahV/wV7Btb7iI5mLKLpRIfDP2EnsgvEWKQ5m9JJPEGjIZZEXZ+JLuw==">
+                    </form>
                 <% else %>
                     对不起，此商品已经下架！
                 <% end %>
