@@ -26,7 +26,7 @@
         <div class="action" style="width:230px;height:200px">
             <div class="add-to-cart" style="float:left;margin-right:0.05em">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
-                    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
+                    <%= button_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
                 <% else %>
                     对不起，此商品已经下架！
                 <% end %>
@@ -34,11 +34,11 @@
             <div class="like" style="float:right";>
                 <% if current_user && current_user.is_favorite_of?(@product) %>
                     <span class="fa fa-heart">
-                        <%= link_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put) %></span>
+                        <%= button_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put) %></span>
                 </span>
             <% else %>
                 <span class="fa fa-heart-o">
-                    <%= link_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
+                    <%= button_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
                 </button>
             <% end %>
         </div>
