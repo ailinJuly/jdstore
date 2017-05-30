@@ -839,7 +839,7 @@ img {
 
 
 
-  .add-to-cart, .addcart, .like , .favorate {
+ .addcart,.favorate {
 
     background: #fff;
     padding-left: 1.2em;
@@ -857,7 +857,7 @@ img {
             transition: background .3s ease;
     margin-top:20px;
     }
-  .addcart-btn:hover, .like:hover {
+  .addcart:hover {
       background: #4bc6ff;
       color: #fff;
       text-decoration: none; /*不要下划线*/
