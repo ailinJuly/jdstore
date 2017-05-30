@@ -804,8 +804,6 @@ img {
   margin-left: 120px;
 }
 
-
-
 .tab-content {
   float: left;
   margin-right: 20px;
@@ -855,24 +853,26 @@ img {
   margin-top: 10px; }
 
 
-  .add-to-cart, .like {
+
+  .addcart-btn, .like , .favorate {
+
     background: #fff;
-    padding: 1.2em 1.5em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
     text-align: center;
     font-weight: 400;
     height: 45px;
+    line-height: 45px;
     text-transform: UPPERCASE;
     border-radius: 12px;
-    border: 1px solid #4bc6ff;
-  
+    border: 2px solid #4bc6ff;
     text-decoration: none;
-    color: #fff;
+    color: #212121;
     -webkit-transition: background .3s ease;
             transition: background .3s ease;
-
     margin-top:20px;
     }
-  .add-to-cart:hover, .like:hover {
+  .addcart-btn:hover, .like:hover {
       background: #4bc6ff;
       color: #fff;
       text-decoration: none; /*不要下划线*/
@@ -1154,7 +1154,17 @@ img {
   text-align: center;
   margin: 20px 0 0 0;
 }
+.button {
+  float: none;
+  background-color: #4bc6ff;
+  font-size: 20px;
+  width: 290px;
+  border-radius: 5px;
 
+  margin-left: 480px;
+  margin-bottom: 100px;
+
+}
 /*预约画面0526jy－－end*/
 
 /*后台画面0527jy*/
