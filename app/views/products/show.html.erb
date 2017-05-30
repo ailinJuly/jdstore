@@ -27,7 +27,7 @@
             <div class="add-to-cart" style="float:left;margin-right:0.05em">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
                     <%= form_for @product, url: add_to_cart_product_path(@product.id) do |f| %>
-                        <%= f.submit "加入购物车",method: :post, class: "button"%>
+                        <%= f.submit "加入购物车",method: :post, class: "button_to"%>
                     <% end %>
                 <% else %>
                     对不起，此商品已经下架！
