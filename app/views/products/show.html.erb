@@ -23,7 +23,7 @@
         </div>
         <p class="product-description"><%=@product.description %></p>
         <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>
-        <div class="action" style="width:220px;height:200px">
+        <div class="action" style="width:200px;height:200px">
             <div class="add-to-cart" style="float:left;margin-right:0.05em">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
                     <%= button_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
@@ -33,11 +33,9 @@
             </div>
             <div class="like" style="float:right">
                 <% if current_user && current_user.is_favorite_of?(@product) %>
-                    <span class="fa fa-heart">
-                        <%= button_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put) %></span>
+                    <%= button_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put) %>
                 <% else %>
-                    <span class="fa fa-heart-o">
-                        <%= button_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %></span>
+                    <%= button_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
                 <% end %>
             </div>
         </div>
