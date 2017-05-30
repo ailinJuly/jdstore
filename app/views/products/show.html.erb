@@ -23,7 +23,7 @@
         </div>
         <p class="product-description"><%=@product.description %></p>
         <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>
-        <div class="action" style="width:230px;height:200px">
+        <div class="action" style="width:260px;height:200px">
             <div class="add-to-cart" style="float:left;margin-right:0.05em">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
                     <%= button_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
