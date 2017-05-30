@@ -31,7 +31,7 @@
                     对不起，此商品已经下架！
                 <% end %>
             </div>
-            <div class="like" style="float:right";>
+            <div class="like" style="float:right">
                 <% if current_user && current_user.is_favorite_of?(@product) %>
                     <span class="fa fa-heart">
                         <%= button_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put) %></span>
@@ -39,7 +39,7 @@
             <% else %>
                 <span class="fa fa-heart-o">
                     <%= button_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
-                </button>
+                </span>
             <% end %>
         </div>
     </div>
