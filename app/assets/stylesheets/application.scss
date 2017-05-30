@@ -72,14 +72,6 @@
    margin-top: -15px;
  }
 
-// .navbar-right-left {
-//   float: left;
-//   width: 50%
-// }
-// .navbar-right-right {
-//   float: right;
-//   width: 50%
-// }
 
  .navbar-listItem-right {
    float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
@@ -730,13 +722,6 @@ button {    margin-top: 6px;
 	font-weight:600;
 }
 
-
-
-
-
-
-
-
  /*导航栏*/
  .navbar {
    width: 100%; /*铺满*/
@@ -839,7 +824,7 @@ img {
   }
 
 .checked, .price span {
-  color: #ff9f1a; }
+  color: #fff; }
 
 .product-title, .product-description {
   margin-bottom: 35px; }
