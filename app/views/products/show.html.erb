@@ -26,10 +26,7 @@
         <div class="action" style="width:230px;height:200px">
             <div class="add-to-cart" style="float:left;margin-right:0.05em">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
-                    <form class="button_to " method="post" action="/products/8/add_to_cart">
-                        <input class="addcart-btn" type="submit" value="加入购物车">
-                        <input type="hidden" name="authenticity_token" value="Km5l9ujQW2/rRcjSoGzDbZ2js86qwWugahV/wV7Btb7iI5mLKLpRIfDP2EnsgvEWKQ5m9JJPEGjIZZEXZ+JLuw==">
-                    </form>
+                    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
                 <% else %>
                     对不起，此商品已经下架！
                 <% end %>
@@ -37,20 +34,20 @@
             <div class="like" style="float:right";>
                 <% if current_user && current_user.is_favorite_of?(@product) %>
                     <span class="fa fa-heart">
-                        <form class="button_to" method="post" action="/products/8/favorite?type=unfavorite">
-                            <input type="hidden" name="_method" value="put"><input class="favorite" type="submit" value="取消收藏">
-                            <input type="hidden" name="authenticity_token" value="UCRq5vryGokHTBXl3eEsJOfzw8Cg+/RKMHKe5TLij7lTR6xjZDlX+6yr29EGYnDB7Fae6CFrpywfKlSxl343kA==">
-                        </form>
-                    </span>
-                <% else %>
-                    <span class="fa fa-heart-o">
-                        <form class="button_to" method="post" action="/products/8/favorite?type=favorite">
-                            <input type="hidden" name="_method" value="put"><input class="favorite" type="submit" value="添加收藏">
-                            <input type="hidden" name="authenticity_token" value="NtnhdEsluuPMAqI4JfDFaMXo8IlurXBqcuXhDlTPSMk1uifx1e73kWflbAz+c5mNzk2toe89IwxdvSta8VPw4A==">
-                        </form>
-                    </span>
-                <% end %>
-            </div>
+                        <%= link_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put) %></span>
+                </span>
+            <% else %>
+                <span class="fa fa-heart-o">
+                    <%= link_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
+                </button>
+            <% end %>
         </div>
     </div>
+</div>
+</div>
+</span>
+<% end %>
+</div>
+</div>
+</div>
 </div>
