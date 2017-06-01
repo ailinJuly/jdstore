@@ -9,6 +9,7 @@
             <th width="220">Product Pic</th>
             <th>Name</th>
             <th>Price</th>
+            <th>Category</th>
             <th width="100">Options</th>
         </tr>
     </thead>
@@ -28,10 +29,13 @@
                     <% end %>
                 </td>
                 <td>
-                    <%= link_to(product.title) %>
+                    <%= product.title %>
                 </td>
                 <td>
-                    <%= link_to(product.price) %>
+                    <%= product.price %>
+                </td>
+                <td>
+                    <%= product.category.name%>
                 </td>
                 <td>
                     <%= link_to("Edit", edit_admin_product_path(product)) %>
