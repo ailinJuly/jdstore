@@ -13,22 +13,7 @@
 //= require bootstrap
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap/alert
 //= require bootstrap/dropdown
-
+//= require bootstrap-sprockets
 //= require_tree .
-
-// $(document).on('click', '.productDecription-menuList-item', function () {
-//   var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
-//   $('.productDecription-content-item').hide() //所有的内容都隐藏
-//   $('.productDecription-content-item').eq(index).show() //只显示对于index的内容
-// })
-
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 125) {
-        $('#navbar').addClass('show_bgcolor')
-    } else {
-        $('#navbar').removeClass('show_bgcolor')
-    }
-})
