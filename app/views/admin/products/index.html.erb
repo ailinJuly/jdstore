@@ -35,7 +35,7 @@
                     <%= product.price %>
                 </td>
                 <td>
-                    <%= product.category.name%>
+                    <%= Category.find(product.category_id).name %>
                 </td>
                 <td>
                     <%= link_to("Edit", edit_admin_product_path(product)) %>
