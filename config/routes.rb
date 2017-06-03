@@ -44,4 +44,8 @@ resources :cart_items
       post :apply_to_cancel
    end
  end
+
+ resources :categories do
+	resources :products
+end
 end
