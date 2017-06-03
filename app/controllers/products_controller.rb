@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user! , only: [:favorite]
+
+
   def index
     @products = Product.all.recent
     if params[:category].blank?
