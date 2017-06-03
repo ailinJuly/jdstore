@@ -44,7 +44,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <% if current_user.admin? %>
-                            <li><%= link_to("Admin选单",admin_products_path) %></li>
+                            <li><%= button_to("Admin选单",admin_products_path) %></li>
                             <li>
                                 <%= link_to("新增分类", categories_path ) %>
                             </li>
