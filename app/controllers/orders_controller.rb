@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     redirect_to :back
   end
   def show
-    @order = Order.find_by_token (params[:id])
+    @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
 
   end
@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
           product_list.save
       end
           current_cart.clean!
-    OrderMailer.notify_order_placed(@order).deliver!
+    # OrderMailer.notify_order_placed(@order).deliver!
 
 
        redirect_to order_path(@order.token)

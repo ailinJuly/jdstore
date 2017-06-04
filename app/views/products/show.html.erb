@@ -1,15 +1,20 @@
+<!-- 商品概述 -->
 <div class="productDetail">
+    <!-- 商品主图 -->
     <div class="productDetail-left bg-color11">
-        <div class="productDetail-left-bigImage bg-color13">
-            <div class="tab-content">
-                <% if @product.image.present? %>
-                    <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <div class="productDetail-left-bigImage thumbnail bg-color13">
+            <% if @photos.present? %>
+                <% @photos.each_with_index do |p, index| %>
+                    <% if index == 0 %>
+                        <%= image_tag p.avatar.medium.url %>
+                    <% end %>
                 <% end %>
-            </div>
+            <% else %>
+                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+            <% end %>
         </div>
     </div>
+    <!-- 商品信息 -->
     <div class="productDetail-right bg-color12">
         <h3 class="product-title"><%= @product.title %></h3>
         <div class="rating">
@@ -23,21 +28,44 @@
         </div>
         <p class="product-description"><%=@product.description %></p>
         <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>
-        <div class="action" style="width:200px;height:200px">
+        <div class="action" style="width:240px;height:200px">
             <div class="add-to-cart" style="float:left;margin-right:0.05em">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
-                    <%= button_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
+                    <%= button_to "加入购物车",  add_to_cart_product_path(@product), :class=> :addcart %>
                 <% else %>
                     对不起，此商品已经下架！
                 <% end %>
             </div>
             <div class="like" style="float:right">
                 <% if current_user && current_user.is_favorite_of?(@product) %>
-                    <%= button_to('取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put) %>
+                    <%= button_to '取消收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), :method => :put, :class=>:favorite  %>
                 <% else %>
-                    <%= button_to('添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
+                    <%= button_to '添加收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put, :class=>:favorite %>
                 <% end %>
             </div>
         </div>
+    </div>
+</div>
+<div class="container-product">
+    <!-- 商品详情区域 + 商品评论区域 -->
+    <div class="col-md-9 product-particulars">
+        <!-- 导航栏 -->
+        <div class="row">
+            <ul class="nav nav-tabs nav-justified">  <!--nav-justified整个画面详情和评论各占一半-->
+                <li class="active">
+                    <a href="#tab_default_1" data-toggle="tab">商品详情</a>
+                </li>
+                <li>
+                    <a href="#tab_default_2" data-toggle="tab">用户评价 (0) </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 商品详情区域 -->
+        <div class="product-particulars-box row tab-pane active" id="tab_default_1">
+            <% @product.photos.each do |p| %>
+                <%= image_tag p.avatar.thumb.url,class: "thumbnail col-md-6",sytle:"width:356px;height:356px"%>
+            <% end %>
+        </div>
+        <!-- 商品评论区域 --><!--对商品评论以及评星-->
     </div>
 </div>

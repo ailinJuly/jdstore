@@ -13,6 +13,7 @@ layout "admin"
   end
   def new
     @product = Product.new
+    @photo = @product.photos.build #for multi-pics
     @categories = Category.all.map {|c| [c.name,c.id]}
   end
 
@@ -25,21 +26,37 @@ layout "admin"
     @product = Product.new(product_params)
     @product.category_id = params[:category_id]
     if @product.save
+        if params[:photos] != nil
+           params[:photos]['avatar'].each do |a|
+             @photo = @product.photos.create(:avatar => a)
+           end
+        end
     redirect_to admin_products_path
     else
     render :new
-  end
+    end
   end
 
   def update
     @product = Product.find(params[:id])
-    if
-    @product.update(product_params)
-    redirect_to admin_products_path
-  else
-    render :edit
+
+    @product.category_id = params[:category_id]
+      if  params[:photos] != nil
+          @product.photos.destroy_all #need to destroy old pics first
+
+          params[:photos]['avatar'].each do |a|
+            @picture = @product.photos.create(:avatar => a)
+          end
+
+        @product.update(product_params)
+        redirect_to admin_products_path
+      elsif @product.update(product_params)
+        redirect_to admin_products_path
+      else
+        render :edit
+      end
   end
-  end
+
   def destroy
     @product =Product.find(params[:id])
     @product.destroy

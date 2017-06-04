@@ -21,8 +21,8 @@
                 </td>
                 <td>
                     <%= link_to product_path(product) do %>
-                        <% if product.image.present? %>
-                            <%= image_tag(product.image.thumb.url, class: "thumbnail")  %>
+                        <% if product.photos.present? %>
+                            <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
                         <% else %>
                             <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")  %>
                         <% end %>
@@ -35,7 +35,7 @@
                     <%= product.price %>
                 </td>
                 <td>
-                    <%= product.category.name%>
+                    <%= Category.find(product.category_id).name %>
                 </td>
                 <td>
                     <%= link_to("Edit", edit_admin_product_path(product)) %>
@@ -43,8 +43,5 @@
                 </td>
             </tr>
         <% end %>
-        <!-- <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-            <%= image_tag "https://yun.kujiale.com/design/3FO4IIMMEI95/show", class: 'img-responsive' %>
-        </div> -->
     </tbody>
 </table>

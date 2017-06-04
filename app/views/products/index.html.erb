@@ -1,11 +1,20 @@
 <!--客厅大图-->
 <div class="living-carousel">  <%=image_tag'https://ws4.sinaimg.cn/large/006tNbRwgy1ffvjo1yq2vj310k0biadf.jpg'%></div>
 <!--风格菜单-->
-<div class="menuList">
-    <div class="btn btn-default manner">简约</div>
-    <div class="btn btn-default manner">北欧</div>
-    <div class="btn btn-primary manner">日式</div>
-    <div class="btn btn-primary manner">古典</div>
+<div class="col-md-4 col-sm-4">
+    <a href="/products?category=简约" class="btn btn-default manner">
+        简约
+    </a>
+    <a href="/products?category=北欧" class="btn btn-default manner">
+        北欧
+    </a>
+    <a href="/products?category=日式" class="btn btn-info manner">
+        日式
+    </a>
+    <a href="/products?category=古典" class="btn btn-info manner">
+        古典
+    </a>
+</div>
 </div>
 <!-- BEGIN PRODUCTS -->
 <div class="ssgList" style="padding-left:50px">
@@ -13,10 +22,10 @@
         <% @products.each do |product| %>
             <div ng-repeat="item in codeList" class="item ng-scope">
                 <%= link_to product_path(product) do %>
-                    <% if product.image.present? %>
-                        <%= image_tag(product.image.thumb.url) %>
+                    <% if product.photos.present? %>
+                        <%= image_tag(product.photos[0].avatar.thumb1.url) %>
                     <% else %>
-                        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                     <% end %>
                 <% end %>
                 <span class="title ng-binding"><%= product.title %></span>

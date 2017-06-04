@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   namespace :admin do
    resources :products
+ end
+
+namespace :admin do
    resources :orders do
        member do
          post :cancel
@@ -44,4 +47,8 @@ resources :cart_items
       post :apply_to_cancel
    end
  end
+
+ resources :categories do
+	resources :products
+end
 end

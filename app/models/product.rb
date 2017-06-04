@@ -5,4 +5,6 @@ class Product < ApplicationRecord
   has_many :favorites
   has_many :member_products, through: :favorites, source: :user
   belongs_to :category
+  has_many :photos
+  accepts_nested_attributes_for :photos
 end
