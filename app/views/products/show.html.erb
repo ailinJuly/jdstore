@@ -63,7 +63,7 @@
         <!-- 商品详情区域 -->
         <div class="product-particulars-box row tab-pane active" id="tab_default_1">
             <% @product.photos.each do |p| %>
-                <%= image_tag p.avatar.thumb.url,class: "thumbnail col-md-6",sytle:"width:356px;height:356px"%>
+                <%= image_tag p.avatar.thumb.url,class: "thumbnail col-md-3" %>
             <% end %>
         </div>
         <!-- 商品评论区域 --><!--对商品评论以及评星-->
