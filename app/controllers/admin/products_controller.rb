@@ -50,9 +50,7 @@ layout "admin"
 
         @product.update(product_params)
         redirect_to admin_products_path
-      elsif
-
-        @product.update(product_params)
+      elsif @product.update(product_params)
         redirect_to admin_products_path
       else
         render :edit
