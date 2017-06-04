@@ -17,8 +17,8 @@
             <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
         </div>
         <div class="group">
-            <%= p.label :avatar %><br>
-            <%= p.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+            <!-- <%= p.label :avatar %><br>
+            <%= p.file_field :avatar, :multiple => true, name: "photos[avatar][]" %> -->
         </div>
         <%= p.submit "Submit" , data: { disable_with: "Submitting..." }%>
     <% end %>
