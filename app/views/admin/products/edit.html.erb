@@ -22,8 +22,8 @@
         <% end %>
     <% end %>
     <div class="group">
-        <%= f.label :avatar %><br>
-        <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+        <%= p.label :avatar %><br>
+        <%= p.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
     </div>
     <%= p.submit "Submit" %>
 <% end %>
