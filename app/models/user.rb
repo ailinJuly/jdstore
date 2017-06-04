@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def is_favorite_of?(product)
     favorite_products.include?(product)
   end
+
+  def short_name
+    self.email.split('@').first
+  end
 end
