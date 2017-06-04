@@ -2,14 +2,16 @@
 <div class="productDetail">
     <!-- 商品主图 -->
     <div class="productDetail-left bg-color11">
-        <div class="productDetail-left-bigImage bg-color13">
-            <div class="tab-content">
-                <% if @product.image.present? %>
-                    <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <div class="productDetail-left-bigImage thumbnail bg-color13">
+            <% if @photos.present? %>
+                <% @photos.each_with_index do |p, index| %>
+                    <% if index == 0 %>
+                        <%= image_tag p.avatar.medium.url %>
+                    <% end %>
                 <% end %>
-            </div>
+            <% else %>
+                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+            <% end %>
         </div>
     </div>
     <!-- 商品信息 -->
@@ -29,7 +31,6 @@
         <div class="action" style="width:240px;height:200px">
             <div class="add-to-cart" style="float:left;margin-right:0.05em">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
-                    <%#= button_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
                     <%= button_to "加入购物车",  add_to_cart_product_path(@product), :class=> :addcart %>
                 <% else %>
                     对不起，此商品已经下架！
@@ -59,14 +60,12 @@
                 </li>
             </ul>
         </div>
-        <div class="tab-content">
-            <!-- 商品详情区域 -->
-            <div class="product-particulars-box row tab-pane active" id="tab_default_1">
-                <% @product.photos.each do |p| %>
-                    <%= image_tag p.image.main.url  , class: "thumbnail img-responsive col-md-6" %>
-                <% end %>
-            </div>
-            <!-- 商品评论区域 --><!--对商品评论以及评星-->
+        <!-- 商品详情区域 -->
+        <div class="product-particulars-box row tab-pane active" id="tab_default_1">
+            <% @product.photos.each do |p| %>
+                <%= image_tag p.avatar.thumb.url,class: "thumbnail col-md-6",sytle:"width:356px;height:356px"%>
+            <% end %>
         </div>
+        <!-- 商品评论区域 --><!--对商品评论以及评星-->
     </div>
 </div>
