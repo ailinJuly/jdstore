@@ -54,7 +54,8 @@
                         <li>
                             <%= link_to("个人订单列表", account_orders_path ) %>
                         </li>
-                        <li><%= button_to("登出",destroy_user_session_path, method: :delete) %></li>
+                        <hr>
+                        <li><%= button_to "登出",destroy_user_session_path, method: :delete, :class =>:logout %></li>
                     </ul>
                 </li>
                 <!-- </li> -->
