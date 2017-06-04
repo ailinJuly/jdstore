@@ -1,7 +1,15 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.fix-h{
 
-  height: 100px;
+//商品详情区域样式
+.product-particulars {
+  margin: 1.0em 0 3em;
+}
+.product-particulars-box {
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 2em 1.2em;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
 }
