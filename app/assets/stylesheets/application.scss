@@ -16,6 +16,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+
  /*5种背景颜色*/
   .bg-color1 {
     background: #FFF;
@@ -55,69 +57,6 @@
    background: #F5F5F5; /*背景颜色*/
 
  }
-
-//  .navbar {
-//    width: 100%; /*设置导航栏宽度1200*/
-//    padding: 15px;
-//    margin: 0 auto; /*水平居中*/
-//  }
-//
-//  .navbar-left {
-//    float: left; /*你去左边*/
-//    width: 70%;
-//    list-style-type: none;
-//    margin-top: -15px;
-//  }
-//
- // .cart-wrap {
- //  //  float: right; /*你去右边*/
- //  // clear: left;
- // }
-
-//
-//
-//  .navbar-listItem-right {
-//    float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
-//    padding-left: 1px; /*左边加点空间，不然太挤啦*/
-//   //  padding-right: 1px; /*右边加点空间，不然太挤啦*/
-//    margin-top: -10px;
-//  }
-//
-//  .navbar-listItem-left {
-//    float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
-//    padding-left: 10px; /*左边加点空间，不然太挤啦*/
-//    padding-right: 10px; /*右边加点空间，不然太挤啦*/
-//  }
-//
-//  .navbar-spacer-right {
-//   //  float: right; /*同样的，你也要float*/
-//   //  width: 30px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
-//   //  height: 12px; /*12px差不多，刚刚好*/
-//   //  margin-top: 9px; /*调一下上边距*/
-//    margin-right: 10px;
-//   // padding-left: 10px;
-//
-//    background: #ddd; /*分隔符的背景颜色*/
-//  }
-//
-//  .navbar-spacer-left {
-//    float: left; /*同样的，你也要float*/
-//    width: 30px; /*宽度为100px当分隔符用了，哈哈*/
-//    height: 12px; /*12px差不多，刚刚好*/
-//    margin-top: 9px; /*调一下上边距*/
-//    background: #F5F5F5; /*分隔符的背景颜色*/
-//  }
-//  .navbar-wrap a {
-//    color: #717171; /*文字的颜色*/
-//    text-decoration: none; /*不要下划线啦，好丑*/
-//  }
-//
-li:hover {
-   color: #C81623; /*鼠标一上去的时候，字体变成红色*/
-   text-decoration: none; /*不要下划线啦，好丑*/
- }
-//
-//
 
 .navbar-brand {
   margin-top: -10px;
@@ -162,20 +101,13 @@ li:hover {
   text-decoration: none; /*不要下划线*/
 }
 
-// .dropdown {
-//   margin-top: -10px;
-//
-//
-// }
-//
-//
-//  /*轮播图*/
-//  .carousel {
-//    margin-left: -15px;
-//    margin-right: -15px;
-//    margin-top: -10px;
-//    height: 550px;
-//  }
+ /*轮播图*/
+ .carousel {
+   margin-left: -15px;
+   margin-right: -15px;
+  //  margin-top: -10px;
+  //  height: 550px;
+ }
 
 //body
  .body1 {
@@ -254,21 +186,23 @@ li:hover {
    margin-top: 20px;
    margin-left: 30px;
    margin-bottom: 0px;
-   width: 1200px;
-   height: 100px;
+   width: 100%;
+   height: 200px;
 
  }
 
  .newList-left {
    float: left; /*你去左边*/
-   width: 580px; /*你占一半的宽度*/
+   width: 40%; /*你占一半的宽度*/
    height: 200px;
+   margin-left: 5%;
    margin-right: 10px;
  }
 
  .newList-right {
    float: right; /*你去左边*/
-   width: 50%; /*你占一半的宽度*/
+   width: 40%; /*你占一半的宽度*/
+   margin-right: 5%;
    height: 200px;
  }
 
@@ -288,17 +222,23 @@ li:hover {
  .new-text{
    margin: 10px;
    padding-left: 10px;
+     padding-top: 5px;
+     padding-bottom: 20px;
  }
 
- .topic-text {
-   padding-top: 10px;
-   padding-bottom: 20px;
- }
+ // .topic-text {
+ //   padding-top: 10px;
+ //   padding-bottom: 20px;
+ // }
  /* 页脚 */
  .footer {
    margin-top: 20px;
    width: 100%;
-   height: 83px;
+   height: 120px;
+ }
+
+ .footer-content {
+   margin-left: 20%;
  }
 
 
@@ -326,13 +266,11 @@ li:hover {
 
 //footer
 #footer-section {
-  padding:40px 0px 75px 0px;
+  margin-bottom: 40px;
+  padding:40px 0px 100px 0px;
   background-color:#F5F5F5;
 }
 
-#footer-copy {
-
-}
 
 #footer-section h3 {
   color:#333;
@@ -369,19 +307,7 @@ li:hover {
   margin:0px 60px 50px 0px;
 }
 
-#footer-join-our-team {
-  cursor:pointer;
-  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/join-our-team-button-large.png);
-  background-size:100% 100%;
-  background-repeat:no-repeat;
-  width:184px;
-  height:41px;
-  margin:0px 0px 10px 0px;
-}
 
-#footer-join-our-team:hover {
-  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/join-our-team-button-over-large.png);
-}
 
 .footer-social-media-link {
   display:inline-block;
@@ -393,17 +319,6 @@ li:hover {
   margin:4px;
 }
 
-#footer-facebook {
-  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/facebook-white-large.png);
-}
-
-#footer-twitter {
-  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/twitter-white-large.png);
-}
-
-#footer-blogspot {
-  background-image:url(http://www.braksoftware.com/codepen/bruce/v1/blogger-white-large.png);
-}
 
 #footer-contact {
   color:#424242;
@@ -749,6 +664,32 @@ button {    margin-top: 6px;
    height: 30px;
  }
 
+.navbar-brand1{
+  float: left;
+  margin-top: -80px;
+  padding-top: 20px;
+  width: 150px;
+  height: 150px;
+  margin-left: 30px;
+
+}
+
+
+.navbar-brand2{
+  float: left;
+  margin-top: -80px;
+  padding-top: 20px;
+  width: 150px;
+  height: 150px;
+  margin-left: 30px;
+
+}
+
+
+/*footer 置底*/
+html { height: 100%;}
+body { min-height: 100%; display: flex; flex-direction: column;}
+.content { flex: 1;}
 
  /*客厅大图*/
 
@@ -782,7 +723,151 @@ button {    margin-top: 6px;
    font-family: 'Noto Sans SC', sans-serif;
    	font-size: 20px;
 
- }
+}
+
+
+
+/* 登录注册 */
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+
+
+
+
+.facepanel {
+  background-image: image_url("pic_house_two.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+
+  .login-page, .sign-up-page {
+    margin-top: 120px;
+    margin-bottom: 80px;
+    span {
+      display: inline-block;
+      margin-right: 15px;
+    }
+    form {
+      max-width: 480px;
+      padding: 15px 35px 45px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 5px;
+      box-shadow: inset 0 1px 1px #9daaaf, 0 0 8px #c1c5c1;
+      h2 {
+        margin-bottom: 30px;
+      }
+      .form-control {
+        position: relative;
+    	  font-size: 16px;
+    	  height: auto;
+    	  padding: 10px;
+        transition: 1s;
+    		@include box-sizing(border-box);
+        &:focus {
+          box-shadow: 1px 1px #fff;
+          border-color: #red;
+    		  z-index: 2;
+    		}
+      }
+    }
+
+   }
+  }
 
 
 /*****************商品详情*************/
