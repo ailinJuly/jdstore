@@ -67,5 +67,14 @@
             <% end %>
         </div>
         <!-- 商品评论区域 --><!--对商品评论以及评星-->
-    </div>
+        <% @posts.each do |post| %>
+            工期：
+            <div class="star-speed" data-score= <%= post.speed %> ></div>
+            服务：
+            <div class="star-service" data-score= <%= post.service %> ></div>
+            价格：
+            <div class="star-price" data-score= <%= post.price %> ></div>
+            <%= post.content %></p>
+    <% end %>
+</div>
 </div>
