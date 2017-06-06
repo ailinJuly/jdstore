@@ -18,3 +18,38 @@
 //= require bootstrap-sprockets
 //= require bootstrap/modal
 //= require_tree .
+$('.star-taste').raty({
+           path: '/images/ratyrate/',
+               readOnly: true,
+               score: function() {
+             return $(this).attr('data-score');
+           }
+     });
+     $('.star-look').raty({
+           path: '/images/ratyrate/',
+               readOnly: true,
+               score: function() {
+             return $(this).attr('data-score');
+           }
+     });$('.star-price').raty({
+           path: '/images/ratyrate/',
+               readOnly: true,
+               score: function() {
+             return $(this).attr('data-score');
+           }
+     });
+
+         $('#star-taste').raty({
+         path: '/images/ratyrate/',
+         scoreName: 'post[taste]'
+     });
+
+     $('#star-look').raty({
+     path: '/images/ratyrate/',
+     scoreName: 'post[look]'
+     });
+
+     $('#star-price').raty({
+         path: '/images/ratyrate/',
+         scoreName: 'post[price]'
+     });
