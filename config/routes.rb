@@ -24,12 +24,17 @@ namespace :admin do
         post :add_to_cart
       end
       put :favorite, on: :member
+      resources :posts
+
    end
+
+
    resources :carts do
      collection do
        delete :clean
        post :checkout
      end
+
    end
 resources :orders
 resources :cart_items
