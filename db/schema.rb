@@ -74,7 +74,10 @@ ActiveRecord::Schema.define(version: 20170605214658) do
     t.datetime "updated_at",             null: false
     t.integer  "rating",     default: 1
     t.integer  "look",       default: 1
+    t.integer  "speed",      default: 1
+    t.integer  "service",    default: 1
     t.integer  "price",      default: 1
+    t.integer  "product_id"
   end
 
   create_table "product_lists", force: :cascade do |t|

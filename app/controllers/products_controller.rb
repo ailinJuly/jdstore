@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
      @photos = @product.photos.all
      @posts = @product.posts
-    @prints = @product.prints.all
+
     if @posts.blank?
       @avg_post = 0
       @avg_service = 0

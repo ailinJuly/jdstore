@@ -46,9 +46,10 @@
         </div>
     </div>
 </div>
-<div class="container-product">
+<!-- 商品详情区域 + 推荐展示 -->
+<div class="details0">
     <!-- 商品详情区域 + 商品评论区域 -->
-    <div class="col-md-9 product-particulars">
+    <div class="col-md-8  product-particulars">
         <!-- 导航栏 -->
         <div class="row">
             <ul class="nav nav-tabs nav-justified">  <!--nav-justified整个画面详情和评论各占一半-->
@@ -56,25 +57,36 @@
                     <a href="#tab_default_1" data-toggle="tab">商品详情</a>
                 </li>
                 <li>
-                    <a href="#tab_default_2" data-toggle="tab">用户评价 (0) </a>
+                    <a href="#tab_default_2" data-toggle="tab">用户评价 (<%= @product.posts.count %>) </a>
                 </li>
             </ul>
         </div>
-        <!-- 商品详情区域 -->
-        <div class="product-particulars-box row tab-pane active" id="tab_default_1">
-            <% @product.photos.each do |p| %>
-                <%= image_tag p.avatar.thumb.url,class: "thumbnail col-md-6",sytle:"width:356px;height:356px"%>
-            <% end %>
+        <div class="tab-content">
+            <!-- 商品详情区域 -->
+            <div class="product-particulars-box row tab-pane active" id="tab_default_1">
+                <% @product.photos.each do |p| %>
+                    <%= image_tag p.avatar.thumb.url,class: "thumbnail col-md-6",sytle:"width:356px;height:356px"%>
+                <% end %>
+            </div>
+            <!-- 商品评论区域 --><!--对商品评论以及评星-->
+            <div class="product-particulars-box row tab-pane" id="tab_default_2">
+                <div class="productDetail-evaluation w200 bc">
+                    <div class="text-center">
+                        <div class="intro-text-count clearfix mt10">
+                            <div class="fl mr10">工期: </div>
+                            <div class="star-rating" data-score= <%= @avg_speed %> ></div>
+                        </div>
+                        <div class="intro-text-count clearfix mt10">
+                            <div class="fl mr10">服务: </div>
+                            <div class="star-look" data-score= <%= @avg_service %> ></div>
+                        </div>
+                        <div class="intro-text-count clearfix mt10">
+                            <div class="fl mr10">价格: </div>
+                            <div class="star-price" data-score= <%= @avg_price %> ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- 商品评论区域 --><!--对商品评论以及评星-->
-        <% @posts.each do |post| %>
-            工期：
-            <div class="star-speed" data-score= <%= post.speed %> ></div>
-            服务：
-            <div class="star-service" data-score= <%= post.service %> ></div>
-            价格：
-            <div class="star-price" data-score= <%= post.price %> ></div>
-            <%= post.content %></p>
-    <% end %>
-</div>
+    </div>
 </div>

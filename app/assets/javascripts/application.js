@@ -18,14 +18,14 @@
 //= require bootstrap-sprockets
 //= require bootstrap/modal
 //= require_tree .
-$('.star-taste').raty({
+$('.star-speed').raty({
            path: '/images/ratyrate/',
                readOnly: true,
                score: function() {
              return $(this).attr('data-score');
            }
      });
-     $('.star-look').raty({
+     $('.star-service').raty({
            path: '/images/ratyrate/',
                readOnly: true,
                score: function() {
@@ -39,14 +39,14 @@ $('.star-taste').raty({
            }
      });
 
-         $('#star-taste').raty({
+         $('#star-speed').raty({
          path: '/images/ratyrate/',
-         scoreName: 'post[taste]'
+         scoreName: 'post[speed]'
      });
 
-     $('#star-look').raty({
+     $('#star-service').raty({
      path: '/images/ratyrate/',
-     scoreName: 'post[look]'
+     scoreName: 'post[service]'
      });
 
      $('#star-price').raty({
