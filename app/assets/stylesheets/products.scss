@@ -13,3 +13,64 @@
   letter-spacing: 0.1em;
   line-height: 1.6em;
 }
+/*评论*/
+.commentList-item {
+	width: 670px;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.commentList-item .content {
+	width: 420px;
+}
+
+.commentList-item .content .commentImage {
+	width: 50px;
+  height: 50px;
+	padding: 2px;
+	margin-top: 10px;
+	margin-right: 2px;
+	&.selected {
+		border: 1px solid #d32048;
+	}
+}
+
+.commentList-item .commentBigImage {
+	margin-top: 20px;
+	width: 300px;
+	display: none;
+}
+
+.commentList-item .name {
+	width: 180px;
+}
+
+.comment-say a {
+	margin-right: auto;
+	margin-left: auto;
+	color: #fff;
+	&:hover {
+		color: #fff;
+	}
+}
+
+.comment-userName {
+	margin-top: 2px;
+}
+
+.comment-avatar {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+}
+
+.comment-image img {
+	width: 70px;
+}
+
+.comment-image-scale img {
+	width: 220px;
+}
+
+.productDetail-evaluation {
+	letter-spacing: 5px;
+}

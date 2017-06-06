@@ -18,7 +18,8 @@
 //= require bootstrap-sprockets
 //= require bootstrap/modal
 //= require_tree .
-$('.star-speed').raty({
+ $(document).ready(function()｛
+ $('.star-speed').raty({
            path: '/images/ratyrate/',
                readOnly: true,
                score: function() {
@@ -32,7 +33,7 @@ $('.star-speed').raty({
              return $(this).attr('data-score');
            }
      });$('.star-price').raty({
-           path: '/images/ratyrate/',
+           path: 'assets/images/ratyrate/',
                readOnly: true,
                score: function() {
              return $(this).attr('data-score');
@@ -50,6 +51,7 @@ $('.star-speed').raty({
      });
 
      $('#star-price').raty({
-         path: '/images/ratyrate/',
+         path: 'assets/images/ratyrate/',
          scoreName: 'post[price]'
      });
+  })
