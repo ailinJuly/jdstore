@@ -17,7 +17,12 @@
  @import "bootstrap";
  @import "font-awesome";
  @import url(http://fonts.googleapis.com/css?family=Roboto);
+ a:focus,
+ a:hover,
+ a:active{
+   text-decoration:none!important;
 
+ }
  /*5种背景颜色*/
   .bg-color1 {
     background: #FFF;
@@ -958,16 +963,18 @@ img {
     text-transform: UPPERCASE;
     border-radius: 12px;
     border: 2px solid #4bc6ff;
-    text-decoration: none;
+
     color: #212121;
     -webkit-transition: background .3s ease;
             transition: background .3s ease;
     margin-top:20px;
     }
-  .addcart:hover {
+
+
+  .addcart:hover,{
       background: #4bc6ff;
       color: #fff;
-      text-decoration: none; /*不要下划线*/
+
   }
 
 
