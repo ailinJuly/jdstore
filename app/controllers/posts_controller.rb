@@ -1,5 +1,4 @@
-class PostController < ApplicationController
-
+class PostsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create]
 
      def new
@@ -34,4 +33,3 @@ class PostController < ApplicationController
      end
 
  end
- Contact GitHub API Training Shop Blog About
