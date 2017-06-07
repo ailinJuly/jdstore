@@ -25,6 +25,7 @@ namespace :admin do
       end
       put :favorite, on: :member
       resources :posts
+       resources :reviews
 
    end
 
