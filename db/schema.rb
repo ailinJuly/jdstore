@@ -72,8 +72,6 @@ ActiveRecord::Schema.define(version: 20170607114330) do
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.integer  "rating",     default: 1
-    t.integer  "look",       default: 1
     t.integer  "speed",      default: 1
     t.integer  "service",    default: 1
     t.integer  "price",      default: 1
@@ -106,6 +104,9 @@ ActiveRecord::Schema.define(version: 20170607114330) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "look"
+    t.integer  "freshness"
+    t.integer  "price"
   end
 
   create_table "users", force: :cascade do |t|
