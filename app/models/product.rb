@@ -7,6 +7,6 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :photos
 
-  has_many :posts
+
   accepts_nested_attributes_for :photos
 end
