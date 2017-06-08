@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorite_products, :through => :favorites, :source => :product
 
-  
+  has_many :reviews
   def is_favorite_of?(product)
     favorite_products.include?(product)
   end

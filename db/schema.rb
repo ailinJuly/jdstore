@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605214658) do
+ActiveRecord::Schema.define(version: 20170608120256) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "name"
@@ -69,17 +69,6 @@ ActiveRecord::Schema.define(version: 20170605214658) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "rating",     default: 1
-    t.integer  "look",       default: 1
-    t.integer  "speed",      default: 1
-    t.integer  "service",    default: 1
-    t.integer  "price",      default: 1
-    t.integer  "product_id"
-  end
-
   create_table "product_lists", force: :cascade do |t|
     t.integer  "order_id"
     t.string   "product_name"
@@ -98,6 +87,17 @@ ActiveRecord::Schema.define(version: 20170605214658) do
     t.datetime "updated_at",  null: false
     t.string   "image"
     t.integer  "category_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "period"
+    t.integer  "servic"
+    t.integer  "price"
   end
 
   create_table "users", force: :cascade do |t|

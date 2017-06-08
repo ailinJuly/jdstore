@@ -68,5 +68,40 @@
             <% end %>
         </div>
         <!-- 商品评论区域 --><!--对商品评论以及评星-->
+        <div class="row review">
+            <div class="col-sm-12 col-md-12">
+                <h3 class="reviews_title">
+                    <%= @product.reviews.count %> Reviews
+                </h3>
+                <hr>
+                <div id="reivews">
+                    <div class="reviews_wrapper clearfix">
+                        <div class="pull-left">
+                            <% @reviews.each do |review| %>
+                                新鲜：
+                                <div class="star-period" data-score= <%= review.period %> ></div>
+                                外观：
+                                <div class="star-servic" data-score= <%= review.servic %> ></div>
+                                价格：
+                                <div class="star-price" data-score= <%= review.price %> ></div>
+                                <p>
+                                    <small>Submitted
+                                        <strong><%= time_ago_in_words(review.created_at) %>
+                                            ago</strong>
+                                        by <%= review.user.email %></small>
+                                </p>
+                                <div>
+                                    <% if review.user == current_user %>
+                                        <%= link_to("Delete", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
+                                    <% end %>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                    <hr>
+                    <%= link_to("评价",new_product_review_path(@product), :class => "btn btn-lg btn-info") %>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

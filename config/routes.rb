@@ -24,8 +24,8 @@ namespace :admin do
         post :add_to_cart
       end
       put :favorite, on: :member
-      resources :posts
-
+    
+  resources :reviews
    end
 
 
