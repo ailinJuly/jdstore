@@ -1,0 +1,49 @@
+<div class="col-md-6" style="margin-top:90px">
+    <h2 class="text-center">商品评价</h2>
+    <hr>
+    <%= render "reviews/form"%>
+</div>
+<script>
+    $('.star-period').raty({
+        path: '/assets/',
+        readOnly: true,
+        score: function() {
+            return $(this).attr('data-score');
+        }
+    });
+    $('.star-service').raty({
+        path: '/assets/',
+        readOnly: true,
+        score: function() {
+            return $(this).attr('data-score');
+        }
+    });
+    $('.star-price').raty({
+        path: '/assets/',
+        readOnly: true,
+        score: function() {
+            return $(this).attr('data-score');
+        }
+    });
+
+    $('#star-period').raty({
+        path: '/assets/',
+        scoreName: 'review[period]'
+    });
+
+    $('#star-service').raty({
+        path: '/assets/',
+        scoreName: 'review[service]'
+    });
+
+    $('#star-price').raty({
+        path: '/assets/',
+        scoreName: 'review[price]'
+    });
+
+
+    <!-- 必须要选一颗星 -->
+    $('#star-period img').eq(0).trigger('click')
+    $('#star-service img').eq(0).trigger('click')
+    $('#star-price img').eq(0).trigger('click')
+</script>

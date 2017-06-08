@@ -10,48 +10,48 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
+//= require jquery.raty
 //= require bootstrap/alert
 //= require bootstrap/dropdown
-//= require bootstrap-sprockets
+
 //= require bootstrap/modal
 //= require_tree .
- $(document).ready(function()｛
- $('.star-speed').raty({
-           path: '/images/ratyrate/',
-               readOnly: true,
-               score: function() {
-             return $(this).attr('data-score');
-           }
-     });
-     $('.star-service').raty({
-           path: '/images/ratyrate/',
-               readOnly: true,
-               score: function() {
-             return $(this).attr('data-score');
-           }
-     });$('.star-price').raty({
-           path: 'assets/images/ratyrate/',
-               readOnly: true,
-               score: function() {
-             return $(this).attr('data-score');
-           }
-     });
+$('.star-period').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+        return $(this).attr('data-score');
+    }
+});
+$('.star-service').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+        return $(this).attr('data-score');
+    }
+});
+$('.star-price').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+        return $(this).attr('data-score');
+    }
+});
 
-         $('#star-speed').raty({
-         path: '/images/ratyrate/',
-         scoreName: 'post[speed]'
-     });
+$('#star-period').raty({
+    path: '/assets/',
+    scoreName: 'review[period]'
+});
 
-     $('#star-service').raty({
-     path: '/images/ratyrate/',
-     scoreName: 'post[service]'
-     });
+$('#star-service').raty({
+    path: '/assets/',
+    scoreName: 'review[service]'
+});
 
-     $('#star-price').raty({
-         path: 'assets/images/ratyrate/',
-         scoreName: 'post[price]'
-     });
-  })
+$('#star-price').raty({
+    path: '/assets/',
+    scoreName: 'review[price]'
+});

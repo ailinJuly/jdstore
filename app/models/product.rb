@@ -8,5 +8,6 @@ class Product < ApplicationRecord
   has_many :photos
 
   has_many :posts
+  has_many :reviews
   accepts_nested_attributes_for :photos
 end

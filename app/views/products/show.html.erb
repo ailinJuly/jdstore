@@ -68,45 +68,51 @@
             <% end %>
         </div>
         <!-- 商品评论区域 --><!--对商品评论以及评星-->
-        <div class="product-particulars-box row tab-pane" id="tab_default_2" style="overflow-y:auto">
-            <div class="productDetail-evaluation w200 bc">
-                <div class="text-center">
-                    <div class="intro-text-count clearfix mt10">
-                        <div class="fl mr10">工期: </div>
-                        <div class="star-speed" data-score= <%= @avg_post %> ></div>
-                    </div>
-                    <div class="intro-text-count clearfix mt10">
-                        <div class="fl mr10">服务: </div>
-                        <div class="star-service" data-score= <%= @avg_service %> ></div>
-                    </div>
-                    <div class="intro-text-count clearfix mt10">
-                        <div class="fl mr10">价格: </div>
-                        <div class="star-price" data-score= <%= @avg_price %> ></div>
+        <div class="product-particulars-box row tab-pane" id="tab_default_2" >
+            <!--对商品评论以及评星-->
+            <div class="text-center">
+                <h3>综合评价</h3>
+                新鲜：
+                <div class="star-period" data-score= <%= @avg_review %> ></div>
+                外观：
+                <div class="star-service" data-score= <%= @avg_look %> ></div>
+                价格：
+                <div class="star-price" data-score= <%= @avg_price %> ></div>
+            </div>
+            <div class="row review">
+                <div class="col-sm-12 col-md-12">
+                    <h3 class="reviews_title">
+                        <%= @product.reviews.count %> Reviews
+                    </h3>
+                    <hr>
+                    <div id="reivews">
+                        <div class="reviews_wrapper clearfix">
+                            <div class="pull-left">
+                                <% @reviews.each do |review| %>
+                                    新鲜：
+                                    <div class="star-period" data-score= <%= review.period %> ></div>
+                                    外观：
+                                    <div class="star-service" data-score= <%= review.service %> ></div>
+                                    价格：
+                                    <div class="star-price" data-score= <%= review.price %> ></div>
+                                    <p>
+                                        <small>Submitted
+                                            <strong><%= time_ago_in_words(review.created_at) %>
+                                                ago</strong>
+                                            by <%= review.user.email %></small>
+                                    </p>
+                                    <div>
+                                        <% if review.user == current_user %>
+                                            <%= link_to("Delete", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
+                                        <% end %>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                        <hr>
+                        <%= link_to("评价",new_product_review_path(@product), :class => "btn btn-lg btn-info") %>
                     </div>
                 </div>
-                <ul class="commentList mt70">
-                    <% @posts.each do |post| %>
-                        <li class="commentList-item w700 pt10 pb10 bc clearfix">
-                            <p class="fl content tl f12">
-                                <%= emojify post.content  %><br>
-                                <% if post.graphics.present? %>
-                                    <% post.graphics.each_with_index do |p, index| %>
-                                        <%= image_tag p.avatar.medium.url, class: "commentImage border" %>
-                                    <% end %>
-                                <% end %>
-                                <br>
-                                <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fczn4z618nj301a010mwz.jpg" class="commentBigImage">
-                            </p>
-                            <p class="fr name ell tr f12">
-                                <%= post.user.email %>
-                            </p>
-                        </li>
-                    <% end %>
-                </ul>
-                <p class="comment-say mt20 mb20">
-                    <%= link_to("我要评论", new_product_post_path(@product),
-                       :class => "g-btn pl15 pr15 mt20 ml20 tc col-red f20 bg-red bc") %>
-                </p>
             </div>
         </div>
     </div>
