@@ -25,7 +25,6 @@ namespace :admin do
       end
       put :favorite, on: :member
       resources :posts
-
    end
 
 
@@ -34,8 +33,8 @@ namespace :admin do
        delete :clean
        post :checkout
      end
-
    end
+
 resources :orders
 resources :cart_items
 
