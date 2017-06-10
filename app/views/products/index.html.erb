@@ -23,7 +23,7 @@
             <div ng-repeat="item in codeList" class="item ng-scope">
                 <%= link_to product_path(product) do %>
                     <% if product.photos.present? %>
-                        <%= image_tag(product.photos[0].avatar.thumb1.url) %>
+                        <%= image_tag(product.photos[0].avatar.thumb1.url, class:"thumbnail") %>
                     <% else %>
                         <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                     <% end %>
