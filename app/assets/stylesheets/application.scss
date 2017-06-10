@@ -623,14 +623,31 @@ body{font-family: 'Noto Sans SC', sans-serif;height:100%}
 }
 	.thumbnail{
 		opacity:0.70;
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
+
+    transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+    -webkit-transition: all 0.4s;
+    -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+    -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+    -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+    -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
 	}
 	.thumbnail:hover{
 		opacity:1.00;
 		box-shadow: 0px 0px 10px #4bc6ff;
 
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+
 	}
+
+  .thumbnailsh{
+
+
+		border: 0px 0px 10px #4bc6ff;
+
+  }
 
 
 	.line{
@@ -956,6 +973,7 @@ img {
     background: #fff;
     padding-left: 1.2em;
     padding-right: 1.2em;
+    width:200px;
     text-align: center;
     font-weight: 400;
     height: 45px;
@@ -965,13 +983,13 @@ img {
     border: 2px solid #4bc6ff;
 
     color: #212121;
-    -webkit-transition: background .3s ease;
-            transition: background .3s ease;
+
     margin-top:20px;
     }
 
 
-  .addcart:hover,{
+  .addcart,
+  .favorite:hover,{
       background: #4bc6ff;
       color: #fff;
 
