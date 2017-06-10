@@ -29,7 +29,7 @@
             </div>
             <p class="product-description"><%=@product.description %></p>
             <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>
-            <div class="action" style="width:240px;height:200px">
+            <div class="col-md-8 action">
                 <div class="add-to-cart" style="float:left;margin-right:0.05em">
                     <% if @product.quantity.present? && @product.quantity > 0 %>
                         <%= button_to "加入购物车",  add_to_cart_product_path(@product), :class=> :addcart %>
@@ -56,16 +56,13 @@
                 <li class="active">
                     <a href="#tab_default_1" data-toggle="tab">商品详情</a>
                 </li>
-                <li>
-                    <a href="#tab_default_2" data-toggle="tab">用户评价</a>
-                </li>
             </ul>
         </div>
         <div class="tab-content">
             <!-- 商品详情区域 -->
             <div class="product-particulars-box row tab-pane active" id="tab_default_1">
                 <% @product.photos.each do |p| %>
-                    <%= image_tag p.avatar.thumb.url,class: "thumbnail col-md-6",sytle:"width:356px;height:356px"%>
+                    <%= image_tag p.avatar.thumb.url,class: "thumbnail col-md-12"%>
                 <% end %>
             </div>
             <!-- 商品评论区域 --><!--对商品评论以及评星-->

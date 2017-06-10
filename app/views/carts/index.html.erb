@@ -10,6 +10,7 @@
                             <th width="25%">Product</th>
                             <th class="text-right">Price</th>
                             <th class="text-right">Qty</th>
+                            <th class="text-right">Category</th>
                             <th class="text-right">Amount</th>
                         </tr>
                     </thead>
@@ -39,28 +40,32 @@
                                         <%= f.submit "Update", data: { disable_with: "Submiting..." } %>
                                     <% end %>
                                 </td>
-                                <td class="td-actions text-center">
-                                    <%= button_to cart_item_path(cart_item.product_id),method: :delete do %>
-                                        <i class="fa fa-trash"></i>
-                                    <% end %>
+                                <td class="td-number category">
+                                    <small><%=cart_item.product.category_id%></small>
                                 </td>
-                            </tr>
-                        <% end %>
-                    </tbody>
-                </table>
-                <hr>
-                <div class="total clearfix">
-                    <span class="pull-right">
-                        <span>
-                            TOTAL :<%= render_cart_total_price(current_cart) %> RMB
-                        </span>
+                            </td>
+                            <td class="td-actions text-center">
+                                <%= button_to cart_item_path(cart_item.product_id),method: :delete do %>
+                                    <i class="fa fa-trash"></i>
+                                <% end %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            <hr>
+            <div class="total clearfix">
+                <span class="pull-right">
+                    <span>
+                        TOTAL :<%= render_cart_total_price(current_cart) %> RMB
                     </span>
-                </div>
-                <hr>
-                <div class="checkout">
-                    <%= button_to("订 购", checkout_carts_path, method: :post, class: "cart-button") %>
-                </div>
+                </span>
+            </div>
+            <hr>
+            <div class="checkout">
+                <%= button_to("订 购", checkout_carts_path, method: :post, class: "cart-button") %>
             </div>
         </div>
     </div>
+</div>
 </div>

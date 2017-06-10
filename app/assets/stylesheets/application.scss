@@ -958,20 +958,19 @@ img {
     padding-right: 1.2em;
     text-align: center;
     font-weight: 400;
+    width:200px;
     height: 45px;
     line-height: 45px;
     text-transform: UPPERCASE;
     border-radius: 12px;
     border: 2px solid #4bc6ff;
-
     color: #212121;
-    -webkit-transition: background .3s ease;
-            transition: background .3s ease;
     margin-top:20px;
     }
 
 
-  .addcart:hover,{
+  .addcart,
+  .favorite :hover{
       background: #4bc6ff;
       color: #fff;
 
@@ -1110,7 +1109,7 @@ img {
 .productDetail-right {
 	float: right; /*你去右边*/
 	width: 684px;
-	height: 518px;
+	max-height: 430px;
 }
 
 
