@@ -3,15 +3,27 @@
 <%= simple_form_for @appointment do |ap| %>
     <div class="login_register_sub appoint-detail">
         <div class="login_register_su1">
-            <span style="font-size: 15px;color: #333333;padding-top:5px">姓名：</span>
+            <span style="padding-top:5px">姓名：</span>
             <div class="input">
                 <%= ap.input :name, label: false,placeholder: '请输入您的姓名', autofocus: true, input_html: { class: "form-control"} %>
             </div>
         </div>
         <div class="login_register_su1">
-            <span style="font-size: 15px;color: #333333;">电话：</span>
+            <span>电话：</span>
             <div class="input">
                 <%= ap.input :phone, label: false, placeholder:"请输入您的电话" , input_html: { class: "form-control"} %>
+            </div>
+        </div>
+        <div class="login_register_su1">
+            <span>日期：</span>
+            <div class="input" style="padding-right:40px">
+                <%= ap.input :start_date, label: false, placeholder:"请输入您方便的日期" , input_html: { class: "form-control"} %>
+            </div>
+        </div>
+        <div class="login_register_su1">
+            <span style="padding-right:280px">备选日期：</span>
+            <div class="input" style="padding-right:40px;padding-bottom:20px">
+                <%= ap.input :end_date, label: false, placeholder:"请输入您的备选日期" , input_html: { class: "form-control"} %>
             </div>
         </div>
     </div>

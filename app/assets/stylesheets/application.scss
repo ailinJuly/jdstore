@@ -1237,13 +1237,14 @@ img {
 
 /*预约画面0526jy*/
 .appoint-detail{
-  height: 190px;
+  height: 320px;
   width: 100%;
   text-align: center;
   margin-top: 10px;
   font-family: 'Noto Sans SC', sans-serif;
 }
 .login_register_su1{
+    text-align: center;
   width:400px !important;
   height: 54px;
   font-size: 15px;
@@ -1278,6 +1279,12 @@ img {
   margin-left: 480px;
   margin-bottom: 100px;
 
+}
+
+.span{
+  display: inline-block;
+  font-size: 15px;
+  color: #333333;
 }
 /*预约画面0526jy－－end*/
 
