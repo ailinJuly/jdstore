@@ -14,18 +14,26 @@
                 <%= ap.input :phone, label: false, placeholder:"请输入您的电话" , input_html: { class: "form-control"} %>
             </div>
         </div>
-        <div class="login_register_su1">
-            <span>日期：</span>
-            <div class="input" style="padding-right:40px">
-                <%= ap.input :start_date, label: false, placeholder:"请输入您方便的日期" , input_html: { class: "form-control"} %>
-            </div>
-        </div>
-        <div class="login_register_su1">
-            <span style="padding-right:280px">备选日期：</span>
-            <div class="input" style="padding-right:40px;padding-bottom:20px">
-                <%= ap.input :end_date, label: false, placeholder:"请输入您的备选日期" , input_html: { class: "form-control"} %>
-            </div>
-        </div>
+        <!doctype html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>jQuery UI Datepicker - Default functionality</title>
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+                <link rel="stylesheet" href="/resources/demos/style.css">
+                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                <script>
+                    $( function() {
+                                                                                                                                                                                                                                                                                                                                $( "#datepicker" ).datepicker();
+                                                                                                                                                                                                                                                                                                                              } );
+                </script>
+            </head>
+            <body>
+                <p>Date: <input type="text" id="datepicker"></p>
+            </body>
+        </html>
     </div>
     <div class="center-button">
         <%= ap.submit "立即预约", class: "button",
