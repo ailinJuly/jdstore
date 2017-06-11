@@ -19,3 +19,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap/modal
 //= require_tree .
+$( function() {
+          $( "#datepicker" ).datepicker();
+          } );
