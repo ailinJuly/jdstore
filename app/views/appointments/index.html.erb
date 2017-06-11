@@ -9,8 +9,7 @@
                 <tr>
                     <th>姓名</th>
                     <th>联系方式</th>
-                    <th>日期</th>
-                    <th>备选日期</th>
+                    <th>预约日期</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,8 +17,7 @@
                     <tr>
                         <td> <%= ap.name%> </td>
                         <td> <%= ap.phone %> </td>
-                        <td><%= ap.start_date %></td>
-                        <td><%= ap.end_date %></td>
+                        <td><%= ap.date %></td>
                     </tr>
                 <% end %>
             </tbody>
