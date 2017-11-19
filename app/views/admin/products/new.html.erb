@@ -1,25 +1,35 @@
 <div class="col-md-8 col-centered" style="height:600px;padding-top:70px;margin:20px 0 200px 100px">
     <h1>New product</h1>
     <%= simple_form_for [:admin, @product] do |p| %>
-        <div class="group">
-            <%= p.input :title,:label => "品名"%>
-        </div>
-        <div class="group">
-            <%= p.input :description, :label => "叙述" %>
-        </div>
-        <div class="group">
-            <%= p.input :quantity, :label => "库存" %>
-        </div>
-        <div class="group">
-            <%= p.input :price, :label => "价格" %>
-        </div>
-        <div class="group">
-            <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
-        </div>
-        <div class="group">
-            <%= p.label :avatar %><br>
-            <%= p.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
-        </div>
-        <%= p.submit "Submit" , data: { disable_with: "Submitting..." }%>
-    <% end %>
+       <div class="group">
+           <%= p.input :title,:label => "品名"%>
+       </div>
+       <div class="group">
+           <%= p.input :description, :label => "叙述" %>
+       </div>
+       <div class="group">
+           <%= p.input :quantity, :label => "库存" %>
+       </div>
+       <div class="group">
+           <%= p.input :price, :label => "价格" %>
+       </div>
+       <div class="group">
+         <%= p.label :类别 %>
+         <%= select(:category_id, Category.all.collect {|c| [ c.name, c.id ] }, include_blank: 'None') %>
+       </div>
+       <div class="group">
+           <%= p.label :avatar %><br>
+           <%= p.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+       </div>
+
+       <div class="group">
+
+         <%= p.label :friendly_id %>
+         <%= p.text_field :friendly_id, :required => true, :class => "form-control" %>
+         <p class="help-block">限小写英数字及横线，将作为网址的一部分</p>
+
+       </div>
+       <%= p.submit "Submit" , data: { disable_with: "Submitting..." }%>
+   <% end %>
+
 </div>

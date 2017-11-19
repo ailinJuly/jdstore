@@ -16,8 +16,10 @@
     </a>
 </div>
 </div>
+
 <!-- BEGIN PRODUCTS -->
 <div class="ssgList" style="padding-left:50px">
+  <h1><%= t("product_list") %></h1>
     <div class="row">
         <% @products.each do |product| %>
             <div ng-repeat="item in codeList" class="item ng-scope">

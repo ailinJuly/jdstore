@@ -9,7 +9,7 @@ layout "admin"
 
   end
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
   end
   def new
     @product = Product.new
@@ -18,14 +18,14 @@ layout "admin"
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] }
 
   end
   def create
     @product = Product.new(product_params)
     @product.category_id = params[:category_id]
-    
+
     if @product.save
         if params[:photos] != nil
            params[:photos]['avatar'].each do |a|
@@ -39,7 +39,7 @@ layout "admin"
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
 
     @product.category_id = params[:category_id]
       if  params[:photos] != nil
@@ -59,7 +59,7 @@ layout "admin"
   end
 
   def destroy
-    @product =Product.find(params[:id])
+    @product =Product.find_by_friendly_id!(params[:id])
     @product.destroy
     redirect_to admin_products_path
       flash[:alert]="DELETED!"
@@ -68,7 +68,7 @@ layout "admin"
 
   private
     def product_params
-      params.require(:product).permit(:title, :description, :price, :quantity, :image, :category_id)
+      params.require(:product).permit(:title, :description, :price, :quantity, :image, :category_id,:friendly_id)
     end
 
 end

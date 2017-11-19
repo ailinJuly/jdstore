@@ -21,21 +21,27 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="/">DreamHouse</a></li>
-                <li><a href="/">首页</a></li>
-                <li><%= link_to("设计",products_path) %></li>
-                <li><a href="/appointments/new" >快来预约吧！</a></li>
+                <li><a href="/"><%= t("Main") %></a></li>
+    
+                <li><a href="/appointments/new" ><%= t("appoint_it") %></a></li>
+
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
-                <button type="submit" class="btn btn-default">搜索</button>
+                <button type="submit" class="btn btn-default"><%= t("search_button") %></button>
+                <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %>
+                <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+
+
             </form>
+
             <ul class="nav navbar-nav navbar-right">
                 <div class="cart-wrap">
                     <div class="cart">
                         <a href="/carts" ><%= link_to carts_path do %>
-                                <i class="fa fa-shopping-cart cart-icon "></i>我的购物车(<%= current_cart.products.count %>)
+                                <i class="fa fa-shopping-cart cart-icon "></i><%= t("cart") %>(<%= current_cart.products.count %>)
                             <% end %>
                         </a>
                     </div>

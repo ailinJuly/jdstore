@@ -12,13 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require bootstrap
-
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require bootstrap/modal
+//= require select2
 //= require_tree .
+
+
+
 $( function() {
           $( "#datepicker" ).datepicker();
+          } );
+$(function() {
+          $('.product_category_id').select2();
           } );

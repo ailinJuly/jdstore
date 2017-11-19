@@ -16,13 +16,18 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ @import "select2";
+ @import "select2-bootstrap";
  @import url(http://fonts.googleapis.com/css?family=Roboto);
+ 
  a:focus,
  a:hover,
  a:active{
    text-decoration:none!important;
 
  }
+
+
  /*5种背景颜色*/
   .bg-color1 {
     background: #FFF;
