@@ -1,5 +1,18 @@
 <div class="col-md-8 col-centered" style="height:600px;padding-top:70px;margin:20px 0 200px 100px">
     <h1>New product</h1>
+
+    <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+          <ul>
+          <% @product.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+    <% end %>
+
     <%= simple_form_for [:admin, @product] do |p| %>
        <div class="group">
            <%= p.input :title,:label => "品名"%>
@@ -13,23 +26,45 @@
        <div class="group">
            <%= p.input :price, :label => "价格" %>
        </div>
-       <div class="group">
-         <%= p.label :类别 %>
-         <%= select(:category_id, Category.all.collect {|c| [ c.name, c.id ] }, include_blank: 'None') %>
-       </div>
+
        <div class="group">
            <%= p.label :avatar %><br>
            <%= p.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
        </div>
+       
+        <div class="group">
+          <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
+        </div>
 
        <div class="group">
-
          <%= p.label :friendly_id %>
          <%= p.text_field :friendly_id, :required => true, :class => "form-control" %>
          <p class="help-block">限小写英数字及横线，将作为网址的一部分</p>
-
        </div>
-       <%= p.submit "Submit" , data: { disable_with: "Submitting..." }%>
+
+       <%= p.nested_fields_for :attachments do |ff| %>
+         <fieldset style="border-left: 5px solid #bbb; margin-bottom: 10px; padding: 10px;">
+           <legend>Attachment</legend>
+           <div class="form-group">
+             <%= ff.label :attachment %>
+             <%= ff.file_field :attachment, :class => "form-control" %>
+             <% if ff.object.attachment.present? %>
+               已上传档案 <%= link_to ff.object.description, ff.object.attachment.url, :target => "_blank" %>
+             <% end %>
+           </div>
+
+             <div class="form-group">
+               <%= ff.label :description %>
+               <%= ff.text_field :description, :class => "form-control" %>
+             </div>
+
+             <%= ff.remove_nested_fields_link "移除这个档案", :class => "btn btn-danger" %>
+           </fieldset>
+         <% end %>
+         <p class="text-right">
+           <%= p.add_nested_fields_link :attachments, "新增档案", :class => "btn btn-default" %>
+         </p>
+     <%= p.submit "Submit" , data: { disable_with: "Submitting..." }%>
    <% end %>
 
 </div>

@@ -1,5 +1,5 @@
 <!-- 商品概述 -->
-<div class="productDetail",sytle="margin-top:100px">
+<div class="productDetail",sytle="margin-top:600px">
     <!-- 商品主图 -->
     <div class="productDetail-left bg-color11">
         <div class="productDetail-left-bigImage bg-color13">
@@ -14,6 +14,8 @@
             <% end %>
         </div>
     </div>
+
+
     <!-- 商品信息 -->
     <div class="productDetail-right bg-color12">
         <h3 class="product-title"><%= @product.title %></h3>
@@ -26,6 +28,11 @@
                 <span class="fa fa-star checked"></span>
             </div>
         </div>
+        <ul>
+          <% @product.attachments.each do |a| %>
+            <li><%= link_to a.description, a.attachment.url %></li>
+          <% end %>
+        </ul>
         <p class="product-description"><%=@product.description %></p>
         <p><%= @product.created_at.to_s %></p>
         <h3 class="price1">current price: <span>￥<%= @product.price %></span></h3>

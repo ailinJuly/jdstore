@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
    end
 
    def add_to_cart
-           @product = Product.find(params[:id])
+           @product = Product.find_by_friendly_id!(params[:id])
      if !current_cart.products.include?(@product)
          flash[:notice]="你已经将 #{@product.title} 加入购物车"
          current_cart.add_product_to_cart(@product)
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
    end
 
    def favorite
-     @product= Product.find(params[:id])
+     @product= Product.find_by_friendly_id!(params[:id])
      type = params[:type]
      if type == "favorite"
      current_user.favorite_products << @product

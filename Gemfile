@@ -45,6 +45,7 @@ gem 'figaro'
 gem 'rails-erd'
 gem "rails-i18n"
 gem "select2-rails"
+gem "nested_form_fields"
 
 
 group :development, :test do

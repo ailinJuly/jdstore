@@ -10,6 +10,8 @@ class Product < ApplicationRecord
   has_many :photos
   accepts_nested_attributes_for :photos
 
+  has_many :attachments,:class_name => "ProductAttachment",:dependent => :destroy, :inverse_of  => :product
+  accepts_nested_attributes_for :attachments, :allow_destroy => true, :reject_if => :all_blank
   def to_param
     self.friendly_id
   end
